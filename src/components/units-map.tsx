@@ -13,7 +13,16 @@ export function UnitsMap() {
 
 		mapRef.current = new mapboxgl.Map({
 			container: mapContainerRef.current!,
+			style: 'mapbox://styles/mapbox/streets-v11',
+      center: [-51.9253, -30.0346],
+      zoom: 6,
+      maxBounds: [
+        [-57.6485, -33.7512],
+        [-49.6976, -27.0767]
+      ]
 		})
+
+		return () => mapRef.current!.remove()
 	}, [])
 
 	return <div className="flex-1 bg-zinc-700" ref={mapContainerRef} />
