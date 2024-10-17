@@ -1,11 +1,19 @@
 'use client'
 
 import mapboxgl, { type Map as MapType } from 'mapbox-gl'
-import { useEffect, useRef } from 'react'
+import { type Dispatch, type SetStateAction, useEffect, useRef } from 'react'
 import 'mapbox-gl/dist/mapbox-gl.css'
-import { conservationUnits } from '@/data/conservation-units'
+import { CONSERVATION_UNITS } from '@/constants/conservation-units'
 
-export function UnitsMap() {
+interface ConservationUnitsMapProps {
+	setConservationUnit: Dispatch<
+		SetStateAction<(typeof CONSERVATION_UNITS)[number]['name']>
+	>
+}
+
+export function ConservationUnitsMap({
+	setConservationUnit,
+}: ConservationUnitsMapProps) {
 	const mapContainerRef = useRef<HTMLDivElement | null>(null)
 	const mapRef = useRef<MapType>()
 
@@ -23,22 +31,19 @@ export function UnitsMap() {
 			],
 		})
 
-		conservationUnits.forEach((unit) => {
-			const el = document.createElement('div')
-			el.className = 'marker'
-
-			new mapboxgl.Marker()
+		CONSERVATION_UNITS.forEach((unit) => {
+			const el = new mapboxgl.Marker({ className: 'marker-' })
 				.setLngLat(unit.lngLat)
-				.setPopup(new mapboxgl.Popup({ offset: 25 }).setText(unit.name))
 				.addTo(mapRef.current!)
+				.getElement()
 
 			el.addEventListener('click', () => {
-				alert(`You clicked on ${unit.name}`)
+				setConservationUnit(unit.name)
 			})
 		})
 
 		return () => mapRef.current!.remove()
-	}, [])
+	}, [setConservationUnit])
 
 	return <div className="flex-1 bg-muted" ref={mapContainerRef} />
 }
