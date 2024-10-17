@@ -37,6 +37,8 @@ export function ConservationUnitsMap({
 				.addTo(mapRef.current!)
 				.getElement()
 
+			el.style.cursor = 'pointer'
+
 			el.addEventListener('click', () => {
 				setConservationUnit(unit.name)
 			})
