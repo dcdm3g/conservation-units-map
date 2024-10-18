@@ -1,6 +1,6 @@
 import { Greeting } from '@/components/greeting'
-import type { Unit } from '@/interfaces/unit'
 import { UnitSummary } from '@/components/unit-summary'
+import type { Unit } from '@/interfaces/unit'
 
 interface SidebarProps {
 	unit: Unit | null
