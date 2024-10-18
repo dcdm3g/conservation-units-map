@@ -1,5 +1,5 @@
-import type { GeoJSONSourceSpecification } from 'mapbox-gl'
 import { UNITS } from '@/constants/units'
+import type { GeoJSONSourceSpecification } from 'mapbox-gl'
 
 export const GEOJSON = {
 	type: 'FeatureCollection',
@@ -10581,7 +10581,7 @@ export const GEOJSON = {
 		},
 		{
 			type: 'Feature',
-			properties:	UNITS.ESPINILHO,
+			properties: UNITS.ESPINILHO,
 			geometry: {
 				type: 'Polygon',
 				coordinates: [

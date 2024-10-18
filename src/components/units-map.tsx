@@ -3,18 +3,14 @@
 import mapboxgl, { type Map as MapType } from 'mapbox-gl'
 import { type Dispatch, type SetStateAction, useEffect, useRef } from 'react'
 import 'mapbox-gl/dist/mapbox-gl.css'
-import type { Unit } from '@/interfaces/unit'
 import { GEOJSON } from '@/constants/geojson'
+import type { Unit } from '@/interfaces/unit'
 
 interface UnitsMapProps {
-	setUnit: Dispatch<
-		SetStateAction<Unit | null>
-	>
+	setUnit: Dispatch<SetStateAction<Unit | null>>
 }
 
-export function UnitsMap({
-	setUnit,
-}: UnitsMapProps) {
+export function UnitsMap({ setUnit }: UnitsMapProps) {
 	const mapContainerRef = useRef<HTMLDivElement | null>(null)
 	const mapRef = useRef<MapType>()
 
