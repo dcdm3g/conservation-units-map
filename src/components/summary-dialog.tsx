@@ -9,15 +9,10 @@ import type { Dispatch, SetStateAction } from 'react'
 
 interface SummaryDialogProps {
 	unit: Unit | null
-	setUnit: Dispatch<
-		SetStateAction<Unit | null>
-	>
+	setUnit: Dispatch<SetStateAction<Unit | null>>
 }
 
-export function SummaryDialog({
-	unit,
-	setUnit,
-}: SummaryDialogProps) {
+export function SummaryDialog({ unit, setUnit }: SummaryDialogProps) {
 	if (!unit) {
 		return null
 	}
