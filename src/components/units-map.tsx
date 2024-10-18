@@ -19,7 +19,7 @@ export function UnitsMap({ setUnit }: UnitsMapProps) {
 
 		mapRef.current = new mapboxgl.Map({
 			container: mapContainerRef.current!,
-			style: 'mapbox://styles/mapbox/streets-v11',
+			style: 'mapbox://styles/mapbox/dark-v10',
 			center: [-51.9253, -30.0346],
 			zoom: 6,
 			maxBounds: [
@@ -71,5 +71,5 @@ export function UnitsMap({ setUnit }: UnitsMapProps) {
 		return () => mapRef.current!.remove()
 	}, [setUnit])
 
-	return <div className="flex-1 bg-muted" ref={mapContainerRef} />
+	return <div className="bg-muted size-sreen flex-1" ref={mapContainerRef} />
 }

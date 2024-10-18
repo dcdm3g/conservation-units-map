@@ -13,7 +13,7 @@ export default function Home() {
 	const isTablet = useMediaQuery('(min-width: 768px)')
 
 	return (
-		<div className="min-h-screen bg-zinc-950 text-zinc-50 flex relative">
+		<div className="min-h-screen bg-zinc-950 text-zinc-50 flex">
 			<UnitsMap setUnit={setUnit} />
 
 			{isTablet ? (
