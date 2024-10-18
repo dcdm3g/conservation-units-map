@@ -1,18 +1,16 @@
 import { Greeting } from '@/components/greeting'
-import type { CONSERVATION_UNITS } from '@/constants/conservation-units'
-import { ConservationUnitSummary } from './conservation-unit-summary'
+import { ConservationUnitSummary } from './unit-summary'
+import type { Unit } from '@/interfaces/unit'
 
 interface SidebarProps {
-	conservationUnity: (typeof CONSERVATION_UNITS)[number]['name']
+	unit: Unit | null
 }
 
-export function Sidebar({ conservationUnity }: SidebarProps) {
-	console.log(conservationUnity)
-
+export function Sidebar({ unit }: SidebarProps) {
 	return (
 		<aside className="basis-96 p-6 bg-card">
-			{conservationUnity ? (
-				<ConservationUnitSummary conservationUnity={conservationUnity} />
+			{unit ? (
+				<ConservationUnitSummary unit={unit} />
 			) : (
 				<Greeting />
 			)}

@@ -4,40 +4,36 @@ import {
 	DialogDescription,
 	DialogTitle,
 } from '@/components/ui/dialog'
-import { CONSERVATION_UNITS } from '@/constants/conservation-units'
+import type { Unit } from '@/interfaces/unit'
 import type { Dispatch, SetStateAction } from 'react'
 
 interface SummaryDialogProps {
-	conservationUnity: (typeof CONSERVATION_UNITS)[number]['name']
-	setConservationUnity: Dispatch<
-		SetStateAction<(typeof CONSERVATION_UNITS)[number]['name']>
+	unit: Unit | null
+	setUnit: Dispatch<
+		SetStateAction<Unit | null>
 	>
 }
 
 export function SummaryDialog({
-	conservationUnity,
-	setConservationUnity,
+	unit,
+	setUnit,
 }: SummaryDialogProps) {
-	const unity = CONSERVATION_UNITS.find(
-		(unity) => unity.name === conservationUnity,
-	)
-
-	if (!unity) {
+	if (!unit) {
 		return null
 	}
 
 	return (
 		<Dialog
-			open={!!unity}
+			open={!!unit}
 			onOpenChange={(open) => {
 				if (!open) {
-					setConservationUnity('')
+					setUnit(null)
 				}
 			}}
 		>
 			<DialogContent>
-				<DialogTitle>{unity.name}</DialogTitle>
-				<DialogDescription>{unity.summary}</DialogDescription>
+				<DialogTitle>{unit.name}</DialogTitle>
+				<DialogDescription>{unit.summary}</DialogDescription>
 			</DialogContent>
 		</Dialog>
 	)

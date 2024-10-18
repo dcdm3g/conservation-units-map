@@ -1,28 +1,28 @@
 'use client'
 
-import { ConservationUnitsMap } from '@/components/conservation-units-map'
 import { Sidebar } from '@/components/sidebar'
 import { SummaryDialog } from '@/components/summary-dialog'
-import type { CONSERVATION_UNITS } from '@/constants/conservation-units'
+import type { Unit } from '@/interfaces/unit'
 import { useState } from 'react'
 import { useMediaQuery } from 'usehooks-ts'
+import { UnitsMap } from '@/components/units-map'
 
 export default function Home() {
-	const [conservationUnity, setConservationUnity] =
-		useState<(typeof CONSERVATION_UNITS)[number]['name']>('')
+	const [unit, setUnit] =
+		useState<Unit | null>(null)
 
 	const isTablet = useMediaQuery('(min-width: 768px)')
 
 	return (
 		<div className="min-h-screen bg-zinc-950 text-zinc-50 flex relative">
-			<ConservationUnitsMap setConservationUnit={setConservationUnity} />
+			<UnitsMap setUnit={setUnit} />
 
 			{isTablet ? (
-				<Sidebar conservationUnity={conservationUnity} />
+				<Sidebar unit={unit} />
 			) : (
 				<SummaryDialog
-					conservationUnity={conservationUnity}
-					setConservationUnity={setConservationUnity}
+					unit={unit}
+					setUnit={setUnit}
 				/>
 			)}
 		</div>
