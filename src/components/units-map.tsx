@@ -23,8 +23,8 @@ export function UnitsMap({ setUnit }: UnitsMapProps) {
 			center: [-51.9253, -30.0346],
 			zoom: 6,
 			maxBounds: [
-				[-57.6485, -33.7512],
-				[-49.6976, -27.0767],
+				[-60.9685, -34],
+				[-49.1250, -27],
 			],
 		})
 
