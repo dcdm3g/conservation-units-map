@@ -24,7 +24,7 @@ export function UnitsMap({ setUnit }: UnitsMapProps) {
 			zoom: 6,
 			maxBounds: [
 				[-60.9685, -34],
-				[-49.1250, -27],
+				[-49.125, -27],
 			],
 		})
 
