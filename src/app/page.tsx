@@ -7,7 +7,7 @@ const Application = dynamic(
 
 export default function Home() {
 	return (
-		<div className="min-h-screen bg-zinc-950 text-zinc-50 flex">
+		<div className="min-h-screen flex">
 			<Application />
 		</div>
 	)

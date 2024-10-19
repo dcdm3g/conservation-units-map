@@ -71,5 +71,5 @@ export function UnitsMap({ setUnit }: UnitsMapProps) {
 		return () => mapRef.current!.remove()
 	}, [setUnit])
 
-	return <div className="bg-muted size-sreen flex-1" ref={mapContainerRef} />
+	return <div className="bg-muted flex-1" ref={mapContainerRef} />
 }
