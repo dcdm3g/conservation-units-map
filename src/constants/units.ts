@@ -34,7 +34,6 @@ export const UNITS = {
 			'Com mais de 60 anos de existência, o Parque Estadual de Espigão Alto está localizado na bacia do rio Uruguai, próximo ao limite com Santa Catarina. Preserva ambientes típicos da floresta com araucária, incluindo árvores centenárias como cedro, louro, angico e várias espécies de canela. A fauna destacada inclui aves como o papagaio-charão, macuco e uru, além de mamíferos como a paca, tamanduá-mirim e jaguatirica.',
 	},
 	ITAPEVA: {
-		// done
 		name: 'Parque Estadual de Itapeva',
 		category: 'Unidade de Proteção Integral',
 		lngLat: [-49.76032090372626, -29.377175389673166],
