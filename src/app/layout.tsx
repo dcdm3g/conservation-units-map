@@ -1,3 +1,4 @@
+import { cn } from '@/lib/utils'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
@@ -19,7 +20,9 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang="pt-BR" className="dark">
-			<body className={inter.className}>{children}</body>
+			<body className={cn(inter.className, 'min-h-screen flex')}>
+				{children}
+			</body>
 		</html>
 	)
 }
