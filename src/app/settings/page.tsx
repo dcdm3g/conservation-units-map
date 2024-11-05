@@ -11,14 +11,14 @@ import {
 import { useTheme } from 'next-themes'
 
 export default function Settings() {
-	const { setTheme } = useTheme()
+	const { setTheme, theme } = useTheme()
 
 	return (
 		<aside className="p-6 bg-card absolute left-4 inset-y-4 w-96 z-40 rounded-lg shadow-md">
 			<div className="space-y-2">
 				<Label>Selecione o tema</Label>
 
-				<Select defaultValue="system" onValueChange={(theme) => setTheme(theme)}>
+				<Select defaultValue={theme ?? 'system'} onValueChange={(theme) => setTheme(theme)}>
 					<SelectTrigger>
 						<SelectValue />
 					</SelectTrigger>
