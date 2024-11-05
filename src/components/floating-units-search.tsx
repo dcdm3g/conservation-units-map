@@ -18,20 +18,22 @@ export function FloatingUnitsSearch() {
 				placeholder="Pesquise pelas UCs..."
 			/>
 
-				<ScrollArea className="flex-1">
-					<ul className="space-y-2 rounded-b bg-background">
-						{Object.values(UNITS)
-							.filter((unit) =>
-								search && unit.name.toLowerCase().includes(search.toLowerCase()),
-							)
-							.slice(0, 5)
-							.map((unit) => (
-								<li key={unit.name}>
-									<UnitCard unit={unit} onClick={() => setSearch('')} />
-								</li>
-							))}
-					</ul>
-				</ScrollArea>
+			<ScrollArea className="flex-1">
+				<ul className="space-y-2 rounded-b bg-background">
+					{Object.values(UNITS)
+						.filter(
+							(unit) =>
+								search &&
+								unit.name.toLowerCase().includes(search.toLowerCase()),
+						)
+						.slice(0, 5)
+						.map((unit) => (
+							<li key={unit.name}>
+								<UnitCard unit={unit} onClick={() => setSearch('')} />
+							</li>
+						))}
+				</ul>
+			</ScrollArea>
 		</div>
 	)
 }
