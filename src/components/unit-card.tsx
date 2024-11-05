@@ -6,7 +6,7 @@ import { useRouter } from 'next/navigation'
 
 interface UnitCardProps {
 	unit: Unit
-  onClick?: () => void
+	onClick?: () => void
 }
 
 export function UnitCard({ unit, onClick }: UnitCardProps) {
@@ -16,7 +16,7 @@ export function UnitCard({ unit, onClick }: UnitCardProps) {
 	function handleSelect() {
 		select(unit)
 		router.replace('/')
-    onClick?.()
+		onClick?.()
 	}
 
 	return (
