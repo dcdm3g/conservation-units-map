@@ -1,6 +1,5 @@
 import { Greeting } from '@/app/_components/greeting'
 import { UnitSummary } from '@/app/_components/unit-summary'
-import type { Unit } from '@/interfaces/unit'
 import { useUnitsStore } from '@/stores/units-store'
 
 export function InformationBar() {

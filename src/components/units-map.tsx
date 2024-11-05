@@ -1,12 +1,13 @@
 'use client'
 
-import mapboxgl, { type Map as MapType } from 'mapbox-gl'
+import mapboxgl, { type Map as MapType, LngLat } from 'mapbox-gl'
 import { useEffect, useRef } from 'react'
 import 'mapbox-gl/dist/mapbox-gl.css'
 import { GEOJSON } from '@/constants/geojson'
 import type { Unit } from '@/interfaces/unit'
 import { useUnitsStore } from '@/stores/units-store'
 import { useTheme } from 'next-themes'
+import { useStore } from 'zustand'
 
 export function UnitsMap() {
 	const mapContainerRef = useRef<HTMLDivElement | null>(null)
@@ -78,16 +79,16 @@ export function UnitsMap() {
 	}, [select, resolvedTheme])
 
 	useEffect(() => {
-		if (selected?.lngLat) {
+		if (selected?.lng && selected?.lat) {
 			mapRef.current!.flyTo({
-				center: selected.lngLat,
+				center: [selected.lng, selected.lat],
 				zoom: 10,
 				speed: 1.2,
 				curve: 1,
 				essential: true,
 			})
 		}
-	}, [selected])
+	})
 
 	return <div className="bg-muted flex-1" ref={mapContainerRef} />
 }
