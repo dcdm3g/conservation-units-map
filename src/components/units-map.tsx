@@ -6,20 +6,24 @@ import 'mapbox-gl/dist/mapbox-gl.css'
 import { GEOJSON } from '@/constants/geojson'
 import type { Unit } from '@/interfaces/unit'
 import { useUnitsStore } from '@/stores/units-store'
+import { useTheme } from 'next-themes'
 
 export function UnitsMap() {
 	const mapContainerRef = useRef<HTMLDivElement | null>(null)
 	const mapRef = useRef<MapType>()
 
 	const select = useUnitsStore((store) => store.select)
-	const unselect = useUnitsStore((store) => store.unselect)
+	const { resolvedTheme } = useTheme()
 
 	useEffect(() => {
 		mapboxgl.accessToken = process.env.NEXT_PUBLIC_MAPBOX_ACCESS_TOKEN!
 
 		mapRef.current = new mapboxgl.Map({
 			container: mapContainerRef.current!,
-			style: 'mapbox://styles/mapbox/dark-v10',
+			style:
+				resolvedTheme === 'dark'
+					? 'mapbox://styles/mapbox/dark-v10'
+					: 'mapbox://styles/mapbox/outdoors-v11',
 			center: [-51.9253, -30.0346],
 			zoom: 6,
 			maxBounds: [
@@ -69,7 +73,7 @@ export function UnitsMap() {
 		})
 
 		return () => mapRef.current!.remove()
-	}, [select])
+	}, [select, resolvedTheme])
 
 	return <div className="bg-muted flex-1" ref={mapContainerRef} />
 }

@@ -2,6 +2,7 @@ import { MainSidebar } from '@/components/main-sidebar'
 import { UnitsMap } from '@/components/units-map'
 import { cn } from '@/lib/utils'
 import type { Metadata } from 'next'
+import { ThemeProvider } from 'next-themes'
 import { Inter } from 'next/font/google'
 import './globals.css'
 
@@ -21,14 +22,21 @@ export default function RootLayout({
 	children: React.ReactNode
 }>) {
 	return (
-		<html lang="pt-BR" className="dark">
-			<body className={cn(inter.className, 'min-h-screen flex ')}>
-				<MainSidebar />
+		<html lang="pt-BR" suppressHydrationWarning>
+			<body className={cn(inter.className, 'min-h-screen flex')}>
+				<ThemeProvider
+					attribute="class"
+					defaultTheme="system"
+					disableTransitionOnChange
+					enableSystem
+				>
+					<MainSidebar />
 
-				<div className="flex-1 relative flex">
-					<UnitsMap />
-					{children}
-				</div>
+					<div className="flex-1 relative flex">
+						<UnitsMap />
+						{children}
+					</div>
+				</ThemeProvider>
 			</body>
 		</html>
 	)
