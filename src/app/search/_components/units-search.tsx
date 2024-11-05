@@ -17,7 +17,7 @@ export function UnitsSearch() {
 				placeholder="Pesquise pelas UCs..."
 			/>
 
-			<ScrollArea className="flex-1">
+			<ScrollArea className="flex-1 flex flex-col">
 				{Object.values(UNITS)
 					.filter((unit) => search && unit.name.includes(search))
 					.slice(0, 10)

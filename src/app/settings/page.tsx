@@ -18,22 +18,19 @@ export default function Settings() {
 			<div className="space-y-2">
 				<Label>Selecione o tema</Label>
 
-				<Select defaultValue={theme ?? 'system'} onValueChange={(theme) => setTheme(theme)}>
+				<Select
+					defaultValue={theme ?? 'system'}
+					onValueChange={(theme) => setTheme(theme)}
+				>
 					<SelectTrigger>
 						<SelectValue />
 					</SelectTrigger>
 					<SelectContent>
-						<SelectItem value="light">
-							Claro
-						</SelectItem>
+						<SelectItem value="light">Claro</SelectItem>
 
-						<SelectItem value="dark">
-							Escuro
-						</SelectItem>
+						<SelectItem value="dark">Escuro</SelectItem>
 
-						<SelectItem value="system">
-							Mesmo do sistema
-						</SelectItem>
+						<SelectItem value="system">Mesmo do sistema</SelectItem>
 					</SelectContent>
 				</Select>
 			</div>
