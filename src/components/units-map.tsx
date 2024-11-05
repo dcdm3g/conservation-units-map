@@ -7,7 +7,7 @@ import { GEOJSON } from '@/constants/geojson'
 import type { Unit } from '@/interfaces/unit'
 import { useUnitsStore } from '@/stores/units-store'
 import { useTheme } from 'next-themes'
-import { useStore } from 'zustand'
+import { useRouter } from 'next/navigation'
 
 export function UnitsMap() {
 	const mapContainerRef = useRef<HTMLDivElement | null>(null)
@@ -17,6 +17,7 @@ export function UnitsMap() {
 	const selected = useUnitsStore((store) => store.selected)
 
 	const { resolvedTheme } = useTheme()
+	const router = useRouter()
 
 	useEffect(() => {
 		mapboxgl.accessToken = process.env.NEXT_PUBLIC_MAPBOX_ACCESS_TOKEN!
@@ -61,7 +62,9 @@ export function UnitsMap() {
 			mapRef.current!.on('click', 'background', (el) => {
 				const [feature] = el.features!
 				const unit = feature.properties as Unit
+
 				select(unit)
+				router.replace('/')
 			})
 
 			mapRef.current!.on('mouseenter', 'background', () => {
@@ -76,7 +79,7 @@ export function UnitsMap() {
 		})
 
 		return () => mapRef.current!.remove()
-	}, [select, resolvedTheme])
+	}, [select, resolvedTheme, router])
 
 	useEffect(() => {
 		if (selected?.lng && selected?.lat) {
