@@ -78,8 +78,6 @@ export function UnitsMap() {
 	}, [select, resolvedTheme])
 
 	useEffect(() => {
-		console.log('running')
-
 		if (selected?.lngLat) {
 			mapRef.current!.flyTo({
 				center: selected.lngLat,
