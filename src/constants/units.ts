@@ -1,4 +1,6 @@
-export const UNITS = {
+import type { Unit } from '@/interfaces/unit'
+
+export const UNITS: Record<string, Unit> = {
 	BANHADO_GRANDE: {
 		name: 'Área de Proteção Ambiental do Banhado Grande',
 		category: 'Unidade de Uso Sustentável',
@@ -147,7 +149,6 @@ export const UNITS = {
 	MATO_GRANDE: {
 		name: 'Reserva Biológica do Mato Grande',
 		category: 'Unidade de Proteção Integral',
-		lngLat: [],
 		summary:
 			'A Reserva Biológica do Mato Grande foi criada para proteger as áreas úmidas do Banhado do Mato Grande, incluindo banhados, campos arenosos e matas de restinga. A flora da unidade é rica em espécies ameaçadas, como Dyckia jonesiana (gravatá) e Ephedra tweediana (efedra). É crucial para a conservação da avifauna de ambientes alagados, abrigando aves endêmicas do bioma Pampa, além de espécies ameaçadas de extinção e aves migratórias. A reserva também é lar de mamíferos listados no Livro Vermelho da Fauna Ameaçada de Extinção do Rio Grande do Sul, como o gato-do-mato-grande (Oncifelis geoffroyi) e a lontra (Lontra longicaudis).',
 	},

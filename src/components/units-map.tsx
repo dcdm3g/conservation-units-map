@@ -13,6 +13,8 @@ export function UnitsMap() {
 	const mapRef = useRef<MapType>()
 
 	const select = useUnitsStore((store) => store.select)
+	const selected = useUnitsStore((store) => store.selected)
+
 	const { resolvedTheme } = useTheme()
 
 	useEffect(() => {
@@ -74,6 +76,20 @@ export function UnitsMap() {
 
 		return () => mapRef.current!.remove()
 	}, [select, resolvedTheme])
+
+	useEffect(() => {
+		console.log('running')
+
+		if (selected?.lngLat) {
+			mapRef.current!.flyTo({
+				center: selected.lngLat,
+				zoom: 10,
+				speed: 1.2,
+				curve: 1,
+				essential: true,
+			})
+		}
+	}, [selected])
 
 	return <div className="bg-muted flex-1" ref={mapContainerRef} />
 }
