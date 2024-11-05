@@ -20,7 +20,7 @@ export function UnitCard({ unit }: UnitCardProps) {
 	return (
 		<button
 			type="button"
-			className="rounded-md flex items-center gap-2 p-1.5 hover:bg-accent transition-colors"
+			className="rounded-md flex w-full items-center gap-2 p-1.5 hover:bg-accent transition-colors"
 			onClick={handleSelect}
 		>
 			<div className="size-16 shrink-0 rounded-md bg-muted" />

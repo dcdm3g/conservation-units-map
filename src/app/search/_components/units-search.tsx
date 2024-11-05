@@ -17,13 +17,15 @@ export function UnitsSearch() {
 				placeholder="Pesquise pelas UCs..."
 			/>
 
-			<ScrollArea className="flex-1 flex flex-col">
+			<ScrollArea className="flex-1">
+				<ul className='flex flex-col gap-0.5'>
 				{Object.values(UNITS)
 					.filter((unit) => search && unit.name.includes(search))
 					.slice(0, 10)
 					.map((unit) => (
-						<UnitCard key={unit.name} unit={unit} />
+						<li key={unit.name}><UnitCard unit={unit} /></li>
 					))}
+				</ul>
 			</ScrollArea>
 		</div>
 	)
