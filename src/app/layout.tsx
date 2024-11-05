@@ -1,3 +1,4 @@
+import { FloatingUnitsSearch } from '@/components/floating-units-search'
 import { MainSidebar } from '@/components/main-sidebar'
 import { UnitsMap } from '@/components/units-map'
 import { cn } from '@/lib/utils'
@@ -33,7 +34,9 @@ export default function RootLayout({
 					<MainSidebar />
 
 					<div className="flex-1 relative flex">
+						<FloatingUnitsSearch />
 						<UnitsMap />
+
 						{children}
 					</div>
 				</ThemeProvider>

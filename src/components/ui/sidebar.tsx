@@ -17,7 +17,10 @@ export function Sidebar({
 	...rest
 }: ComponentProps<'aside'>) {
 	return (
-		<aside className="flex flex-col border-r bg-background p-2" {...rest}>
+		<aside
+			className={cn('flex flex-col border-r bg-background p-2', className)}
+			{...rest}
+		>
 			{children}
 		</aside>
 	)

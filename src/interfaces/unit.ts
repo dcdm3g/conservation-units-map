@@ -3,5 +3,5 @@ export interface Unit {
 	summary: string
 	category: 'Unidade de Uso Sustentável' | 'Unidade de Proteção Integral'
 	lng?: number
-  lat?: number
+	lat?: number
 }
