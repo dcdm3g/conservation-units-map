@@ -18,13 +18,18 @@ export function UnitsSearch() {
 			/>
 
 			<ScrollArea className="flex-1">
-				<ul className='flex flex-col gap-0.5'>
-				{Object.values(UNITS)
-					.filter((unit) => search && unit.name.includes(search))
-					.slice(0, 10)
-					.map((unit) => (
-						<li key={unit.name}><UnitCard unit={unit} /></li>
-					))}
+				<ul className="flex flex-col gap-0.5">
+					{Object.values(UNITS)
+						.filter(
+							(unit) =>
+								search &&
+								unit.name.toLowerCase().includes(search.toLowerCase()),
+						)
+						.map((unit) => (
+							<li key={unit.name}>
+								<UnitCard unit={unit} />
+							</li>
+						))}
 				</ul>
 			</ScrollArea>
 		</div>
