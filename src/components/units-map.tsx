@@ -1,18 +1,18 @@
 'use client'
 
 import mapboxgl, { type Map as MapType } from 'mapbox-gl'
-import { type Dispatch, type SetStateAction, useEffect, useRef } from 'react'
+import { useEffect, useRef } from 'react'
 import 'mapbox-gl/dist/mapbox-gl.css'
 import { GEOJSON } from '@/constants/geojson'
 import type { Unit } from '@/interfaces/unit'
+import { useUnitsStore } from '@/stores/units-store'
 
-interface UnitsMapProps {
-	setUnit: Dispatch<SetStateAction<Unit | null>>
-}
-
-export function UnitsMap({ setUnit }: UnitsMapProps) {
+export function UnitsMap() {
 	const mapContainerRef = useRef<HTMLDivElement | null>(null)
 	const mapRef = useRef<MapType>()
+
+	const select = useUnitsStore((store) => store.select)
+	const unselect = useUnitsStore((store) => store.unselect)
 
 	useEffect(() => {
 		mapboxgl.accessToken = process.env.NEXT_PUBLIC_MAPBOX_ACCESS_TOKEN!
@@ -54,7 +54,7 @@ export function UnitsMap({ setUnit }: UnitsMapProps) {
 			mapRef.current!.on('click', 'background', (el) => {
 				const [feature] = el.features!
 				const unit = feature.properties as Unit
-				setUnit(unit)
+				select(unit)
 			})
 
 			mapRef.current!.on('mouseenter', 'background', () => {
@@ -69,7 +69,7 @@ export function UnitsMap({ setUnit }: UnitsMapProps) {
 		})
 
 		return () => mapRef.current!.remove()
-	}, [setUnit])
+	}, [select])
 
 	return <div className="bg-muted flex-1" ref={mapContainerRef} />
 }

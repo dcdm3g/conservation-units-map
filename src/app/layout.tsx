@@ -1,3 +1,5 @@
+import { MainSidebar } from '@/components/main-sidebar'
+import { UnitsMap } from '@/components/units-map'
 import { cn } from '@/lib/utils'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
@@ -20,8 +22,13 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang="pt-BR" className="dark">
-			<body className={cn(inter.className, 'min-h-screen flex')}>
-				{children}
+			<body className={cn(inter.className, 'min-h-screen flex ')}>
+				<MainSidebar />
+
+				<div className="flex-1 relative flex">
+					<UnitsMap />
+					{children}
+				</div>
 			</body>
 		</html>
 	)
