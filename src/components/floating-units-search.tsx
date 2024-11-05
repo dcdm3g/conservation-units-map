@@ -10,7 +10,7 @@ export function FloatingUnitsSearch() {
 	const [search, setSearch] = useState('')
 
 	return (
-		<div className="absolute inset-4 md:hidden z-50 flex flex-col">
+		<div className="absolute inset-4 md:hidden z-40 flex flex-col">
 			<Input
 				className="rounded-b-none focus-visible:ring-0 focus-visible:ring-offset-0"
 				value={search}
@@ -26,6 +26,7 @@ export function FloatingUnitsSearch() {
 								search &&
 								unit.name.toLowerCase().includes(search.toLowerCase()),
 						)
+						.slice(0, 5)
 						.map((unit) => (
 							<li key={unit.name}>
 								<UnitCard unit={unit} onClick={() => setSearch('')} />

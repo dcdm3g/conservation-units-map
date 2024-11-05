@@ -5,6 +5,7 @@ import { cn } from '@/lib/utils'
 import type { Metadata } from 'next'
 import { ThemeProvider } from 'next-themes'
 import { Inter } from 'next/font/google'
+import { ThemesDock } from '@/components/themes-dock'
 import './globals.css'
 
 export const metadata: Metadata = {
@@ -32,6 +33,7 @@ export default function RootLayout({
 					enableSystem
 				>
 					<MainSidebar />
+					<ThemesDock />
 
 					<div className="flex-1 relative flex">
 						<FloatingUnitsSearch />

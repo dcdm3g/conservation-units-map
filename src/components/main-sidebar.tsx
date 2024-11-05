@@ -12,10 +12,6 @@ export function MainSidebar() {
 				<SidebarItem label="Buscar" href="/search">
 					<Search />
 				</SidebarItem>
-
-				<SidebarItem label="Tema" href="/settings">
-					<Settings />
-				</SidebarItem>
 			</SidebarGroup>
 		</Sidebar>
 	)
