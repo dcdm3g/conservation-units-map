@@ -17,7 +17,10 @@ export function DockItem({ className, ...rest }: ComponentProps<'button'>) {
 	return (
 		<li>
 			<button
-				className={cn('h-8 flex px-4 hover:bg-accent transition-colors justify-center items-center', className)}
+				className={cn(
+					'h-8 flex px-4 hover:bg-accent transition-colors justify-center items-center',
+					className,
+				)}
 				{...rest}
 			/>
 		</li>

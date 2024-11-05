@@ -1,11 +1,11 @@
 import { FloatingUnitsSearch } from '@/components/floating-units-search'
 import { MainSidebar } from '@/components/main-sidebar'
+import { ThemesDock } from '@/components/themes-dock'
 import { UnitsMap } from '@/components/units-map'
 import { cn } from '@/lib/utils'
 import type { Metadata } from 'next'
 import { ThemeProvider } from 'next-themes'
 import { Inter } from 'next/font/google'
-import { ThemesDock } from '@/components/themes-dock'
 import './globals.css'
 
 export const metadata: Metadata = {
