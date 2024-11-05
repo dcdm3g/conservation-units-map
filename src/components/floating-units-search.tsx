@@ -12,7 +12,7 @@ export function FloatingUnitsSearch() {
 	return (
 		<div className="absolute inset-4 md:hidden z-50 flex flex-col">
 			<Input
-				className="rounded-b-none focus-visible:ring-0"
+				className="rounded-b-none focus-visible:ring-0 focus-visible:ring-offset-0"
 				value={search}
 				onChange={(e) => setSearch(e.target.value)}
 				placeholder="Pesquise pelas UCs..."
