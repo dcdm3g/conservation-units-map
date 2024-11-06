@@ -13,21 +13,23 @@ interface ContentBarProps {
 
 export function ContentBar({ children }: ContentBarProps) {
 	const container = useRef<HTMLDivElement | null>(null)
-	const [state, setState] = useState<'minimized' | 'maximized'>('maximized')
+	const [isMinimized, setIsMinimized] = useState(false)
 
-	const { contextSafe } = useGSAP({ scope: container })
-
-	const toggleState = contextSafe(() => {
-		if (state === 'maximized') {
-			gsap.to('#bar', { height: 0, duration: 0.4 })
-			gsap.to('#content', { opacity: 0, duration: 0.25 })
-			setState('minimized')
-		} else {
-			gsap.to('#bar', { height: '100%', duration: 0.4 })
-			gsap.to('#content', { opacity: 1, delay: 0.4 })
-			setState('maximized')
-		}
-	})
+	useGSAP(
+		(context) => {
+			if (isMinimized) {
+				gsap.to('#bar', { height: 0, duration: 0.4 })
+				gsap.to('#content', { opacity: 0, duration: 0.2 })
+			} else {
+				gsap.to('#bar', { height: '100%', duration: 0.4 })
+				gsap.to('#content', { opacity: 1, duration: 0.2 })
+			}
+		},
+		{
+			scope: container,
+			dependencies: [isMinimized],
+		},
+	)
 
 	return (
 		<div ref={container} className="absolute left-4 inset-y-4 z-40">
@@ -38,9 +40,9 @@ export function ContentBar({ children }: ContentBarProps) {
 				<button
 					className="size-7 flex justify-center items-center hover:bg-accent transition-colors rounded-full bg-card absolute -top-1.5 -right-1.5"
 					type="button"
-					onClick={toggleState}
+					onClick={() => setIsMinimized((im) => !im)}
 				>
-					{state === 'maximized' ? (
+					{isMinimized ? (
 						<Maximize2 className="size-3.5" />
 					) : (
 						<Minimize2 className="size-3.5" />
