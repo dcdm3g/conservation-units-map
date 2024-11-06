@@ -24,24 +24,17 @@ export default function RootLayout({
 	children: React.ReactNode
 }>) {
 	return (
-		<html lang="pt-BR" suppressHydrationWarning>
+		<html className="dark" lang="pt-BR">
 			<body className={cn(inter.className, 'min-h-screen flex')}>
-				<ThemeProvider
-					attribute="class"
-					defaultTheme="system"
-					disableTransitionOnChange
-					enableSystem
-				>
-					<MainSidebar />
-					<ThemesDock />
+				<MainSidebar />
+				<ThemesDock />
 
-					<div className="flex-1 relative flex">
-						<FloatingUnitsSearch />
-						<UnitsMap />
+				<div className="flex-1 relative flex">
+					<FloatingUnitsSearch />
+					<UnitsMap />
 
-						{children}
-					</div>
-				</ThemeProvider>
+					{children}
+				</div>
 			</body>
 		</html>
 	)

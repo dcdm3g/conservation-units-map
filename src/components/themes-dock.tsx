@@ -1,14 +1,14 @@
 'use client'
 
 import { Dock, DockItem } from '@/components/ui/dock'
-import { useTheme } from 'next-themes'
+import { useThemeStore } from '@/stores/theme-store'
 
 export function ThemesDock() {
-	const { setTheme } = useTheme()
+	const { setTheme } = useThemeStore()
 
 	return (
 		<Dock>
-			<DockItem onClick={() => setTheme('light')}>Outdoors</DockItem>
+			<DockItem onClick={() => setTheme('outdoors')}>Outdoors</DockItem>
 			<DockItem onClick={() => setTheme('dark')}>Escuro</DockItem>
 		</Dock>
 	)
