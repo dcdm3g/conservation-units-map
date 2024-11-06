@@ -1,6 +1,6 @@
+import { getSystemTheme } from '@/helpers/get-system-theme'
 import { create } from 'zustand'
 import { persist } from 'zustand/middleware'
-import { getSystemTheme } from '@/helpers/get-system-theme'
 
 export const themes = {
 	outdoors: 'mapbox://styles/mapbox/outdoors-v11',
