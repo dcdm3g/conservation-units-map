@@ -1,4 +1,3 @@
-import { getSystemTheme } from '@/helpers/get-system-theme'
 import { create } from 'zustand'
 import { persist } from 'zustand/middleware'
 
@@ -15,7 +14,7 @@ interface ThemeState {
 export const useThemeStore = create<ThemeState>()(
 	persist(
 		(set) => ({
-			theme: themes[getSystemTheme()],
+			theme: themes.outdoors,
 			setTheme: (theme) => set({ theme: themes[theme] }),
 		}),
 		{ name: 'theme' },
