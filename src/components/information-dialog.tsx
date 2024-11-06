@@ -1,3 +1,5 @@
+'use client'
+
 import {
 	Dialog,
 	DialogContent,
@@ -5,12 +7,14 @@ import {
 	DialogTitle,
 } from '@/components/ui/dialog'
 import { useUnitsStore } from '@/stores/units-store'
+import { useMediaQuery } from 'usehooks-ts'
 
 export function InformationDialog() {
+	const isTablet = useMediaQuery('(min-width: 768px)')
 	const selected = useUnitsStore((store) => store.selected)
 	const unselect = useUnitsStore((store) => store.unselect)
 
-	if (!selected) {
+	if (isTablet || !selected) {
 		return null
 	}
 

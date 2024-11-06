@@ -1,10 +1,10 @@
 'use client'
 
-import { InformationBar } from '@/app/_components/information-bar'
-import { InformationDialog } from '@/app/_components/information-dialog'
-import { useMediaQuery } from 'usehooks-ts'
+import { Greeting } from '@/app/_components/greeting'
+import { UnitSummary } from '@/app/_components/unit-summary'
+import { useUnitsStore } from '@/stores/units-store'
 
 export function Information() {
-	const isTablet = useMediaQuery('(min-width: 768px)')
-	return isTablet ? <InformationBar /> : <InformationDialog />
+	const unit = useUnitsStore((store) => store.selected)
+	return unit ? <UnitSummary unit={unit} /> : <Greeting />
 }

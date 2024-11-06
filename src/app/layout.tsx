@@ -4,9 +4,10 @@ import { ThemesDock } from '@/components/themes-dock'
 import { UnitsMap } from '@/components/units-map'
 import { cn } from '@/lib/utils'
 import type { Metadata } from 'next'
-import { ThemeProvider } from 'next-themes'
+import dynamic from 'next/dynamic'
 import { Inter } from 'next/font/google'
 import './globals.css'
+import { ContentBar } from '@/components/content-bar'
 
 export const metadata: Metadata = {
 	title: 'Unidades de Conservação do RS',
@@ -17,6 +18,14 @@ export const metadata: Metadata = {
 const inter = Inter({
 	subsets: ['latin'],
 })
+
+const InformationDialog = dynamic(
+	() =>
+		import('@/components/information-dialog').then(
+			(module) => module.InformationDialog,
+		),
+	{ ssr: false },
+)
 
 export default function RootLayout({
 	children,
@@ -31,9 +40,9 @@ export default function RootLayout({
 
 				<div className="flex-1 relative flex">
 					<FloatingUnitsSearch />
+					<InformationDialog />
 					<UnitsMap />
-
-					{children}
+					<ContentBar>{children}</ContentBar>
 				</div>
 			</body>
 		</html>
