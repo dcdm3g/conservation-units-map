@@ -12,7 +12,7 @@ import { useReadLocalStorage } from 'usehooks-ts'
 
 export function UnitsMap() {
 	const mapContainerRef = useRef<HTMLDivElement | null>(null)
-	const mapRef = useRef<MapType>()
+	const mapRef = useRef<MapType>(undefined)
 
 	const select = useUnitsStore((store) => store.select)
 	const selected = useUnitsStore((store) => store.selected)
