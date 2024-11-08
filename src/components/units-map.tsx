@@ -4,11 +4,11 @@ import mapboxgl, { type Map as MapType, LngLat } from 'mapbox-gl'
 import { useEffect, useRef } from 'react'
 import 'mapbox-gl/dist/mapbox-gl.css'
 import { GEOJSON } from '@/constants/geojson'
+import { styles } from '@/constants/styles'
 import type { Unit } from '@/interfaces/unit'
 import { useUnitsStore } from '@/stores/units-store'
 import { useRouter } from 'next/navigation'
 import { useReadLocalStorage } from 'usehooks-ts'
-import { styles } from '@/constants/styles'
 
 export function UnitsMap() {
 	const mapContainerRef = useRef<HTMLDivElement | null>(null)
