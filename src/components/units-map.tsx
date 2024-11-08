@@ -3,7 +3,7 @@
 import mapboxgl, { type Map as MapType, LngLat } from 'mapbox-gl'
 import { useEffect, useRef } from 'react'
 import 'mapbox-gl/dist/mapbox-gl.css'
-import { GEOJSON } from '@/constants/geojson'
+import { geojson } from '@/constants/geojson'
 import { styles } from '@/constants/styles'
 import type { Unit } from '@/interfaces/unit'
 import { useUnitsStore } from '@/stores/units-store'
@@ -35,7 +35,7 @@ export function UnitsMap() {
 		})
 
 		mapRef.current.on('load', () => {
-			mapRef.current!.addSource('maine', { type: 'geojson', data: GEOJSON })
+			mapRef.current!.addSource('maine', { type: 'geojson', data: geojson })
 
 			mapRef.current!.addLayer({
 				id: 'background',

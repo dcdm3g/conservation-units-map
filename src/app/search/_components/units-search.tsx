@@ -3,7 +3,7 @@
 import { UnitCard } from '@/app/search/_components/unit-card'
 import { Input } from '@/components/ui/input'
 import { ScrollArea } from '@/components/ui/scroll-area'
-import { UNITS } from '@/constants/units'
+import { units } from '@/constants/units'
 import { useState } from 'react'
 
 export function UnitsSearch() {
@@ -19,7 +19,7 @@ export function UnitsSearch() {
 
 			<ScrollArea className="flex-1">
 				<ul className="flex flex-col gap-0.5">
-					{Object.values(UNITS)
+					{Object.values(units)
 						.filter(
 							(unit) =>
 								search &&

@@ -1,6 +1,6 @@
 import type { Unit } from '@/interfaces/unit'
 
-export const UNITS: Record<string, Unit> = {
+export const units: Record<string, Unit> = {
 	BANHADO_GRANDE: {
 		name: 'Área de Proteção Ambiental do Banhado Grande',
 		category: 'Unidade de Uso Sustentável',

@@ -3,7 +3,7 @@
 import { Input } from '@/components/ui/input'
 import { ScrollArea } from '@/components/ui/scroll-area'
 import { UnitCard } from '@/components/unit-card'
-import { UNITS } from '@/constants/units'
+import { units } from '@/constants/units'
 import { useState } from 'react'
 
 export function FloatingUnitsSearch() {
@@ -20,7 +20,7 @@ export function FloatingUnitsSearch() {
 
 			<ScrollArea className="flex-1">
 				<ul className="space-y-2 rounded-b bg-background">
-					{Object.values(UNITS)
+					{Object.values(units)
 						.filter(
 							(unit) =>
 								search &&
