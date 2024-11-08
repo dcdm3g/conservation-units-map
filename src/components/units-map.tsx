@@ -1,13 +1,14 @@
 'use client'
 
-import mapboxgl, { type Map as MapType, LngLat } from 'mapbox-gl'
+import mapboxgl, { type Map as MapType } from 'mapbox-gl'
 import { useEffect, useRef } from 'react'
 import 'mapbox-gl/dist/mapbox-gl.css'
 import { geojson } from '@/constants/geojson'
 import { styles } from '@/constants/styles'
 import type { Unit } from '@/interfaces/unit'
 import { useUnitsStore } from '@/stores/units-store'
-import { useRouter } from 'next/navigation'
+import { parseSearchParamAsFloat } from '@/utils/parse-search-param-as-float'
+import { useRouter, useSearchParams } from 'next/navigation'
 import { useReadLocalStorage } from 'usehooks-ts'
 
 export function UnitsMap() {
@@ -18,16 +19,22 @@ export function UnitsMap() {
 	const selected = useUnitsStore((store) => store.selected)
 
 	const style = useReadLocalStorage<string>('style')
+
 	const router = useRouter()
+	const searchParams = useSearchParams()
 
 	useEffect(() => {
 		mapboxgl.accessToken = process.env.NEXT_PUBLIC_MAPBOX_ACCESS_TOKEN!
 
+		const longitude = parseSearchParamAsFloat(searchParams.get('lng'), -51.9253)
+		const latitude = parseSearchParamAsFloat(searchParams.get('lat'), -30.0346)
+		const zoom = parseSearchParamAsFloat(searchParams.get('zoom'), 6)
+
 		mapRef.current = new mapboxgl.Map({
 			container: mapContainerRef.current!,
 			style: style ?? styles.outdoors,
-			center: [-51.9253, -30.0346],
-			zoom: 6,
+			center: [longitude, latitude],
+			zoom,
 			maxBounds: [
 				[-60.9685, -34],
 				[-49.125, -27],
@@ -62,12 +69,24 @@ export function UnitsMap() {
 				const unit = feature.properties as Unit
 
 				select(unit)
-				router.replace('/')
 			})
 
 			mapRef.current!.on('mouseenter', 'background', () => {
 				const canvas = mapRef.current!.getCanvas()
 				canvas.style.cursor = 'pointer'
+			})
+
+			mapRef.current!.on('moveend', (event) => {
+				const { lng, lat } = event.target.getCenter()
+				const zoom = event.target.getZoom()
+
+				const params = new URLSearchParams(searchParams.toString())
+
+				params.set('lng', String(lng))
+				params.set('lat', String(lat))
+				params.set('zoom', String(zoom))
+
+				router.replace('/?' + params.toString())
 			})
 
 			mapRef.current!.on('mouseleave', 'background', () => {
@@ -77,7 +96,7 @@ export function UnitsMap() {
 		})
 
 		return () => mapRef.current!.remove()
-	}, [select, style, router])
+	}, [select, style, router.replace, searchParams.get, searchParams.toString])
 
 	useEffect(() => {
 		if (selected?.lng && selected?.lat) {
