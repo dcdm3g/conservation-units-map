@@ -108,7 +108,7 @@ export function UnitsMap() {
 				essential: true,
 			})
 		}
-	})
+	}, [selected?.lng, selected?.lat])
 
 	return <div className="bg-muted flex-1" ref={mapContainerRef} />
 }

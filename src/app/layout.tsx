@@ -7,6 +7,7 @@ import { UnitsMap } from '@/components/units-map'
 import { cn } from '@/lib/utils'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
+import { Suspense } from 'react'
 import './globals.css'
 
 export const metadata: Metadata = {
@@ -33,7 +34,11 @@ export default function RootLayout({
 				<div className="flex-1 relative flex">
 					<FloatingUnitsSearch />
 					<InformationDialog />
-					<UnitsMap />
+
+					<Suspense>
+						<UnitsMap />
+					</Suspense>
+
 					<ContentBar>{children}</ContentBar>
 				</div>
 			</body>
