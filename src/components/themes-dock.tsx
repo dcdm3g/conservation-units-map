@@ -1,15 +1,19 @@
 'use client'
 
 import { Dock, DockItem } from '@/components/ui/dock'
-import { useThemeStore } from '@/stores/theme-store'
+import { styles } from '@/constants/styles'
+import { useLocalStorage } from 'usehooks-ts'
 
-export function ThemesDock() {
-	const { setTheme } = useThemeStore()
+export function StylesDock() {
+	const [, setStyle] = useLocalStorage<(typeof styles)[keyof typeof styles]>(
+		'style',
+		styles.outdoors,
+	)
 
 	return (
 		<Dock>
-			<DockItem onClick={() => setTheme('outdoors')}>Outdoors</DockItem>
-			<DockItem onClick={() => setTheme('dark')}>Escuro</DockItem>
+			<DockItem onClick={() => setStyle(styles.outdoors)}>Outdoors</DockItem>
+			<DockItem onClick={() => setStyle(styles.dark)}>Escuro</DockItem>
 		</Dock>
 	)
 }

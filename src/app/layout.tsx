@@ -1,6 +1,6 @@
 import { FloatingUnitsSearch } from '@/components/floating-units-search'
 import { MainSidebar } from '@/components/main-sidebar'
-import { ThemesDock } from '@/components/themes-dock'
+import { StylesDock } from '@/components/themes-dock'
 import { UnitsMap } from '@/components/units-map'
 import { cn } from '@/lib/utils'
 import type { Metadata } from 'next'
@@ -36,7 +36,7 @@ export default function RootLayout({
 		<html className="dark" lang="pt-BR">
 			<body className={cn(inter.className, 'min-h-screen flex')}>
 				<MainSidebar />
-				<ThemesDock />
+				<StylesDock />
 
 				<div className="flex-1 relative flex">
 					<FloatingUnitsSearch />

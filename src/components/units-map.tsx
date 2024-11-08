@@ -5,9 +5,10 @@ import { useEffect, useRef } from 'react'
 import 'mapbox-gl/dist/mapbox-gl.css'
 import { GEOJSON } from '@/constants/geojson'
 import type { Unit } from '@/interfaces/unit'
-import { useThemeStore } from '@/stores/theme-store'
 import { useUnitsStore } from '@/stores/units-store'
 import { useRouter } from 'next/navigation'
+import { useReadLocalStorage } from 'usehooks-ts'
+import { styles } from '@/constants/styles'
 
 export function UnitsMap() {
 	const mapContainerRef = useRef<HTMLDivElement | null>(null)
@@ -16,7 +17,7 @@ export function UnitsMap() {
 	const select = useUnitsStore((store) => store.select)
 	const selected = useUnitsStore((store) => store.selected)
 
-	const { theme } = useThemeStore()
+	const style = useReadLocalStorage<string>('style')
 	const router = useRouter()
 
 	useEffect(() => {
@@ -24,7 +25,7 @@ export function UnitsMap() {
 
 		mapRef.current = new mapboxgl.Map({
 			container: mapContainerRef.current!,
-			style: theme,
+			style: style ?? styles.outdoors,
 			center: [-51.9253, -30.0346],
 			zoom: 6,
 			maxBounds: [
@@ -76,7 +77,7 @@ export function UnitsMap() {
 		})
 
 		return () => mapRef.current!.remove()
-	}, [select, theme, router])
+	}, [select, style, router])
 
 	useEffect(() => {
 		if (selected?.lng && selected?.lat) {
