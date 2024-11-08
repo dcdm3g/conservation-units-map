@@ -1,4 +1,6 @@
+import { ContentBar } from '@/components/content-bar'
 import { FloatingUnitsSearch } from '@/components/floating-units-search'
+import { InformationDialog } from '@/components/information-dialog-importer'
 import { MainSidebar } from '@/components/main-sidebar'
 import { StylesDock } from '@/components/themes-dock'
 import { UnitsMap } from '@/components/units-map'
@@ -6,8 +8,6 @@ import { cn } from '@/lib/utils'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
-import { ContentBar } from '@/components/content-bar'
-import { InformationDialog } from '@/components/information-dialog-importer'
 
 export const metadata: Metadata = {
 	title: 'Unidades de Conservação do RS',
