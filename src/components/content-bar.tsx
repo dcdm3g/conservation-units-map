@@ -1,8 +1,9 @@
 'use client'
 
+import { cn } from '@/lib/utils'
 import { useGSAP } from '@gsap/react'
 import { gsap } from 'gsap'
-import { Maximize2, Minimize2 } from 'lucide-react'
+import { ChevronUp } from 'lucide-react'
 import { type ReactNode, useRef, useState } from 'react'
 
 gsap.registerPlugin(useGSAP)
@@ -42,11 +43,12 @@ export function ContentBar({ children }: ContentBarProps) {
 					type="button"
 					onClick={() => setIsMinimized((im) => !im)}
 				>
-					{isMinimized ? (
-						<Maximize2 className="size-3.5" />
-					) : (
-						<Minimize2 className="size-3.5" />
-					)}
+					<ChevronUp
+						className={cn(
+							'size-4 transition-transform',
+							isMinimized && 'rotate-180',
+						)}
+					/>
 				</button>
 
 				<div id="content" className="size-full">
