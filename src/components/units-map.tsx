@@ -5,23 +5,20 @@ import { useEffect, useRef } from 'react'
 import 'mapbox-gl/dist/mapbox-gl.css'
 import { geojson } from '@/constants/geojson'
 import { styles } from '@/constants/styles'
-import type { Unit } from '@/interfaces/unit'
-import { useUnitsStore } from '@/stores/units-store'
+import { units } from '@/constants/units'
 import { parseSearchParamAsFloat } from '@/utils/parse-search-param-as-float'
-import { useRouter, useSearchParams } from 'next/navigation'
+import { useParams, useRouter, useSearchParams } from 'next/navigation'
 import { useReadLocalStorage } from 'usehooks-ts'
 
 export function UnitsMap() {
 	const mapContainerRef = useRef<HTMLDivElement | null>(null)
 	const mapRef = useRef<MapType>(undefined)
 
-	const select = useUnitsStore((store) => store.select)
-	const selected = useUnitsStore((store) => store.selected)
-
 	const style = useReadLocalStorage<string>('style')
 
-	const router = useRouter()
 	const searchParams = useSearchParams()
+	const params = useParams<{ slug?: string }>()
+	const router = useRouter()
 
 	useEffect(() => {
 		mapboxgl.accessToken = process.env.NEXT_PUBLIC_MAPBOX_ACCESS_TOKEN!
@@ -66,9 +63,9 @@ export function UnitsMap() {
 
 			mapRef.current!.on('click', 'background', (el) => {
 				const [feature] = el.features!
-				const unit = feature.properties as Unit
+				const { slug } = feature.properties as { slug: string }
 
-				select(unit)
+				router.push('/units/' + slug + '?' + searchParams.toString())
 			})
 
 			mapRef.current!.on('mouseenter', 'background', () => {
@@ -86,7 +83,7 @@ export function UnitsMap() {
 				params.set('lat', String(lat))
 				params.set('zoom', String(zoom))
 
-				router.replace('/?' + params.toString())
+				window.history.replaceState(null, '', '?' + params.toString())
 			})
 
 			mapRef.current!.on('mouseleave', 'background', () => {
@@ -96,19 +93,25 @@ export function UnitsMap() {
 		})
 
 		return () => mapRef.current!.remove()
-	}, [select, style, router.replace, searchParams.get, searchParams.toString])
+	}, [style, searchParams.get, searchParams.toString, router.push])
 
 	useEffect(() => {
-		if (selected?.lng && selected?.lat) {
+		if (!params.slug) {
+			return
+		}
+
+		const unit = units[params.slug]
+
+		if (unit?.lng && unit?.lat) {
 			mapRef.current!.flyTo({
-				center: [selected.lng, selected.lat],
+				center: [unit.lng, unit.lat],
 				zoom: 10,
 				speed: 1.2,
 				curve: 1,
 				essential: true,
 			})
 		}
-	}, [selected?.lng, selected?.lat])
+	}, [params.slug])
 
 	return <div className="bg-muted flex-1" ref={mapContainerRef} />
 }

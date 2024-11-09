@@ -1,6 +1,5 @@
 import { ContentBar } from '@/components/content-bar'
 import { FloatingUnitsSearch } from '@/components/floating-units-search'
-import { InformationDialog } from '@/components/information-dialog-importer'
 import { MainSidebar } from '@/components/main-sidebar'
 import { StylesDock } from '@/components/themes-dock'
 import { UnitsMap } from '@/components/units-map'
@@ -33,7 +32,6 @@ export default function RootLayout({
 
 				<div className="flex-1 relative flex">
 					<FloatingUnitsSearch />
-					<InformationDialog />
 
 					<Suspense>
 						<UnitsMap />
