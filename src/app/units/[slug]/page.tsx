@@ -6,8 +6,7 @@ import { Fragment } from 'react'
 export const dynamicParams = false
 
 export function generateStaticParams() {
-	const slugs = Object.keys(units)
-	return slugs.map((slug) => ({ slug }))
+	return units.map((unit) => ({ slug: unit.slug }))
 }
 
 interface UnitProps {
@@ -16,12 +15,12 @@ interface UnitProps {
 
 export default async function Unit({ params }: UnitProps) {
 	const { slug } = await params
-	const info = units[slug]
+	const info = units.find((unit) => unit.slug === slug)
 
 	return (
 		<Fragment>
-			<UnitInformation info={info} />
-			<UnitDialog info={info} />
+			<UnitInformation info={info!} />
+			<UnitDialog info={info!} />
 		</Fragment>
 	)
 }

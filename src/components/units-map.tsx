@@ -100,7 +100,7 @@ export function UnitsMap() {
 			return
 		}
 
-		const unit = units[params.slug]
+		const unit = units.find((unit) => unit.slug === params.slug)
 
 		if (unit?.lng && unit?.lat) {
 			mapRef.current!.flyTo({
