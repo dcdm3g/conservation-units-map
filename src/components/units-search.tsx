@@ -38,14 +38,25 @@ export function BarSearch() {
 				onOpenAutoFocus={(e) => e.preventDefault()}
 			>
 				<ScrollArea className="h-40">
-					<ul>
-						{results.map((unit) => (
-							<li key={unit.slug}>
-								<Link key={unit.slug} href={'/units/' + unit.slug}>
-									{unit.name}
-								</Link>
-							</li>
-						))}
+					<ul className="space-y-2 rounded-b bg-background">
+						{Object.values(units)
+							.filter(
+								(unit) =>
+									search &&
+									unit.name.toLowerCase().includes(search.toLowerCase()),
+							)
+							.map((unit) => (
+								<li key={unit.name}>
+									<Link
+										href={'/units/' + unit.slug}
+										className="rounded-md flex w-full items-center gap-2 p-1.5 hover:bg-accent transition-colors"
+									>
+										<h2 className="font-semibold text-start text-ellipsis whitespace-nowrap overflow-hidden">
+											{unit.name}
+										</h2>
+									</Link>
+								</li>
+							))}
 					</ul>
 				</ScrollArea>
 			</PopoverContent>

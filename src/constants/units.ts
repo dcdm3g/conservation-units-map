@@ -716,5 +716,3 @@ export const units: Unit[] = [
 			'A Reserva Particular do Patrimônio Natural Estadual Salto Forqueta, localizada em São José do Herval, RS, abrange cerca de 45 hectares no bioma da Mata Atlântica. Criada pela portaria SEMA nº 306/2019, a reserva pertence à CERTEL Energia e destina-se à preservação ambiental. Além de proteger uma área significativa de floresta nativa, a RPPN contribui para a manutenção da biodiversidade local, incluindo espécies endêmicas de flora e fauna. A localização próxima ao Salto Forqueta, uma cascata de grande beleza natural, torna o local um ponto de importância ecológica e paisagística para a região.',
 	},
 ]
-
-console.log(units.map((s) => s.slug.replaceAll('-', ' ')))
