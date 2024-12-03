@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'bun:test'
-import { parseSearchParamAsFloat } from './parse-search-param-as-float'
+import { parseSearchParamAsFloat } from '@/utils/parse-search-param-as-float'
 
 describe('(utils) parseSearchParamAsFloat', () => {
 	it('should be able to parse floats', () => {

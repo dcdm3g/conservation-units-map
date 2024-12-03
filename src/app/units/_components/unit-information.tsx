@@ -8,7 +8,7 @@ interface UnitInformationProps {
 export function UnitInformation({ children }: UnitInformationProps) {
 	return (
 		<ScrollArea className="h-full">
-			<div className="flex flex-col gap-4">{children}</div>
+			<div>{children}</div>
 		</ScrollArea>
 	)
 }

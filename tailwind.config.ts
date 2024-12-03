@@ -2,7 +2,7 @@ import type { Config } from 'tailwindcss'
 
 const config: Config = {
 	darkMode: 'selector',
-	content: ['src/app/**/*.tsx', 'src/components/**/*.tsx'],
+	content: ['src/**/*.tsx'],
 	theme: {
 		extend: {
 			borderRadius: {
