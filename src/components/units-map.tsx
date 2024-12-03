@@ -6,8 +6,9 @@ import 'mapbox-gl/dist/mapbox-gl.css'
 import { geojson } from '@/constants/geojson'
 import { styles } from '@/constants/styles'
 import { units } from '@/constants/units'
+import { last } from '@/utils/last'
 import { parseSearchParamAsFloat } from '@/utils/parse-search-param-as-float'
-import { useParams, useRouter, useSearchParams } from 'next/navigation'
+import { usePathname, useRouter, useSearchParams } from 'next/navigation'
 import { useReadLocalStorage } from 'usehooks-ts'
 
 export function UnitsMap() {
@@ -17,8 +18,10 @@ export function UnitsMap() {
 	const style = useReadLocalStorage<string>('style')
 
 	const searchParams = useSearchParams()
-	const params = useParams<{ slug?: string }>()
 	const router = useRouter()
+
+	const pathname = usePathname()
+	const unit = last(pathname.split('/'))
 
 	useEffect(() => {
 		mapboxgl.accessToken = process.env.NEXT_PUBLIC_MAPBOX_ACCESS_TOKEN!
@@ -96,22 +99,18 @@ export function UnitsMap() {
 	}, [style, searchParams.get, searchParams.toString, router.push])
 
 	useEffect(() => {
-		if (!params.slug) {
-			return
-		}
+		const found = units.find((u) => u.slug === unit)
 
-		const unit = units.find((unit) => unit.slug === params.slug)
-
-		if (unit?.lng && unit?.lat) {
+		if (found?.lng && found?.lat) {
 			mapRef.current!.flyTo({
-				center: [unit.lng, unit.lat],
+				center: [found.lng, found.lat],
 				zoom: 10,
 				speed: 1.2,
 				curve: 1,
 				essential: true,
 			})
 		}
-	}, [params.slug])
+	}, [unit])
 
 	return <div className="bg-muted flex-1" ref={mapContainerRef} />
 }
