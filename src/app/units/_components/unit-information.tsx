@@ -1,3 +1,4 @@
+import { ImageCarousel } from '@/app/units/_components/image-carousel'
 import { ScrollArea } from '@/components/ui/scroll-area'
 import type { ReactNode } from 'react'
 
@@ -8,7 +9,10 @@ interface UnitInformationProps {
 export function UnitInformation({ children }: UnitInformationProps) {
 	return (
 		<ScrollArea className="h-full">
-			<div>{children}</div>
+			<div className="flex flex-col gap-4">
+				<ImageCarousel />
+				<div>{children}</div>
+			</div>
 		</ScrollArea>
 	)
 }

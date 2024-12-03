@@ -33,7 +33,7 @@ export function UnitDrawer({ children }: UnitDialogProps) {
 				<DrawerTitle className="sr-only">{unit}</DrawerTitle>
 
 				<ScrollArea className="h-full">
-					<ImageCarousel unit={unit} />
+					<ImageCarousel />
 					{children}
 				</ScrollArea>
 			</DrawerContent>

@@ -1,23 +1,38 @@
+'use client'
+
+import {
+	Carousel,
+	CarouselContent,
+	CarouselItem,
+	CarouselNext,
+	CarouselPrevious,
+} from '@/components/ui/carousel'
+import { last } from '@/utils/last'
 import Image from 'next/image'
+import { usePathname } from 'next/navigation'
 
-interface ImageCarouselProps {
-	unit: string
-}
+export function ImageCarousel() {
+	const pathname = usePathname()
+	const unit = last(pathname.split('/'))
 
-export function ImageCarousel({ unit }: ImageCarouselProps) {
 	return (
-		<div className="mt-2 flex h-40 w-full">
-			<div className="h-40 w-64 relative">
-				<Image src={'/' + unit + '-left.jpg'} alt={unit} fill />
-			</div>
+		<Carousel className="w-full">
+			<CarouselContent>
+				<CarouselItem className="relative h-40">
+					<Image src={'/' + unit + '-left.jpg'} alt={unit} fill />
+				</CarouselItem>
 
-			<div className="h-40 w-64 relative">
-				<Image src={'/' + unit + '-middle.jpg'} alt={unit} fill />
-			</div>
+				<CarouselItem className="relative h-40">
+					<Image src={'/' + unit + '-middle.jpg'} alt={unit} fill />
+				</CarouselItem>
 
-			<div className="h-40 w-64 relative">
-				<Image src={'/' + unit + '-right.jpg'} alt={unit} fill />
-			</div>
-		</div>
+				<CarouselItem className="relative h-40">
+					<Image src={'/' + unit + '-right.jpg'} alt={unit} fill />
+				</CarouselItem>
+			</CarouselContent>
+
+			<CarouselNext />
+			<CarouselPrevious />
+		</Carousel>
 	)
 }
