@@ -2,8 +2,8 @@
 
 import { Input } from '@/components/ui/input'
 import { ScrollArea } from '@/components/ui/scroll-area'
-import { UnitCard } from '@/components/unit-card'
 import { units } from '@/constants/units'
+import Link from 'next/link'
 import { useState } from 'react'
 
 export function FloatingUnitsSearch() {
@@ -29,7 +29,13 @@ export function FloatingUnitsSearch() {
 						.slice(0, 5)
 						.map((unit) => (
 							<li key={unit.name}>
-								<UnitCard unit={unit} onClick={() => setSearch('')} />
+								<Link
+									href={'/units/' + unit.slug}
+									className="rounded-md flex w-full items-center gap-2 p-1.5 hover:bg-accent transition-colors"
+								>
+									<div className="size-16 shrink-0 rounded-md bg-muted" />
+									<h2 className="font-semibold text-start">{unit.name}</h2>
+								</Link>
 							</li>
 						))}
 				</ul>

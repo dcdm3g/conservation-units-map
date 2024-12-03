@@ -1,4 +1,3 @@
-import { units } from '@/constants/units'
 import type { GeoJSONSourceSpecification } from 'mapbox-gl'
 
 export const geojson = {
@@ -6,7 +5,7 @@ export const geojson = {
 	features: [
 		{
 			type: 'Feature',
-			properties: units.ITAPEVA,
+			properties: { slug: 'itapeva' },
 			geometry: {
 				type: 'Polygon',
 				coordinates: [
@@ -189,7 +188,7 @@ export const geojson = {
 		},
 		{
 			type: 'Feature',
-			properties: units.BANHADO_GRANDE,
+			properties: { slug: 'banhado-grande' },
 			geometry: {
 				type: 'Polygon',
 				coordinates: [
@@ -1648,7 +1647,7 @@ export const geojson = {
 		},
 		{
 			type: 'Feature',
-			properties: units.APA_DELTA_DO_JACUI,
+			properties: { slug: 'apa-estadual-delta-do-jacui' },
 			geometry: {
 				type: 'Polygon',
 				coordinates: [
@@ -4398,7 +4397,7 @@ export const geojson = {
 		},
 		{
 			type: 'Feature',
-			properties: units.ROTA_DO_SOL,
+			properties: { slug: 'rota-do-sol' },
 			geometry: {
 				type: 'Polygon',
 				coordinates: [
@@ -6156,7 +6155,7 @@ export const geojson = {
 		},
 		{
 			type: 'Feature',
-			properties: units.CAMAQUA,
+			properties: { slug: 'camaqua' },
 			geometry: {
 				type: 'MultiPolygon',
 				coordinates: [
@@ -6454,7 +6453,7 @@ export const geojson = {
 		},
 		{
 			type: 'Feature',
-			properties: units.ARATINGA,
+			properties: { slug: 'aratinga' },
 			geometry: {
 				type: 'Polygon',
 				coordinates: [
@@ -6745,7 +6744,7 @@ export const geojson = {
 		},
 		{
 			type: 'Feature',
-			properties: units.ESPIGAO_ALTO,
+			properties: { slug: 'espigao-alto' },
 			geometry: {
 				type: 'MultiPolygon',
 				coordinates: [
@@ -10581,7 +10580,7 @@ export const geojson = {
 		},
 		{
 			type: 'Feature',
-			properties: units.ESPINILHO,
+			properties: { slug: 'espinilho' },
 			geometry: {
 				type: 'Polygon',
 				coordinates: [
@@ -10632,7 +10631,7 @@ export const geojson = {
 		},
 		{
 			type: 'Feature',
-			properties: units.ESPINILHO,
+			properties: { slug: 'espinilho' },
 			geometry: {
 				type: 'Polygon',
 				coordinates: [
@@ -10681,7 +10680,7 @@ export const geojson = {
 		},
 		{
 			type: 'Feature',
-			properties: units.BANHADO_DO_MACARICO,
+			properties: { slug: 'banhado-do-macarico' },
 			geometry: {
 				type: 'Polygon',
 				coordinates: [
@@ -10727,7 +10726,7 @@ export const geojson = {
 		},
 		{
 			type: 'Feature',
-			properties: units.BANHADO_DO_MACARICO,
+			properties: { slug: 'banhado-do-macarico' },
 			geometry: {
 				type: 'Polygon',
 				coordinates: [
@@ -10761,7 +10760,7 @@ export const geojson = {
 		},
 		{
 			type: 'Feature',
-			properties: units.IBICUI_MIRIM,
+			properties: { slug: 'ibicui-mirim' },
 			geometry: {
 				type: 'Polygon',
 				coordinates: [
@@ -10827,7 +10826,7 @@ export const geojson = {
 		},
 		{
 			type: 'Feature',
-			properties: units.IBIRAPUITA,
+			properties: { slug: 'ibirapuita' },
 			geometry: {
 				type: 'Polygon',
 				coordinates: [
@@ -11314,7 +11313,7 @@ export const geojson = {
 		},
 		{
 			type: 'Feature',
-			properties: units.MATA_PALUDOSA,
+			properties: { slug: 'mata-paludosa' },
 			geometry: {
 				type: 'MultiPolygon',
 				coordinates: [
@@ -11501,7 +11500,7 @@ export const geojson = {
 		},
 		{
 			type: 'Feature',
-			properties: units.MATO_GRANDE,
+			properties: { slug: 'mato-grande' },
 			geometry: {
 				type: 'Polygon',
 				coordinates: [
@@ -11865,7 +11864,7 @@ export const geojson = {
 		},
 		{
 			type: 'Feature',
-			properties: units.IBITIRIA,
+			properties: { slug: 'ibitiria' },
 			geometry: {
 				type: 'Polygon',
 				coordinates: [
@@ -12160,7 +12159,7 @@ export const geojson = {
 		},
 		{
 			type: 'Feature',
-			properties: units.PAPAGAIO_CHARAO,
+			properties: { slug: 'papagaio-charao' },
 			geometry: {
 				type: 'Polygon',
 				coordinates: [
@@ -12521,7 +12520,7 @@ export const geojson = {
 		},
 		{
 			type: 'Feature',
-			properties: units.TURVO,
+			properties: { slug: 'turvo' },
 			geometry: {
 				type: 'Polygon',
 				coordinates: [
@@ -13771,7 +13770,7 @@ export const geojson = {
 		},
 		{
 			type: 'Feature',
-			properties: units.RB_SERRA_GERAL,
+			properties: { slug: 'rb-serra-geral' },
 			geometry: {
 				type: 'Polygon',
 				coordinates: [
@@ -14051,7 +14050,7 @@ export const geojson = {
 		},
 		{
 			type: 'Feature',
-			properties: units.ITAPUA,
+			properties: { slug: 'itapua' },
 			geometry: {
 				type: 'Polygon',
 				coordinates: [
@@ -15966,7 +15965,7 @@ export const geojson = {
 		},
 		{
 			type: 'Feature',
-			properties: units.ITAPUA,
+			properties: { slug: 'itapua' },
 			geometry: {
 				type: 'Polygon',
 				coordinates: [
@@ -16030,7 +16029,7 @@ export const geojson = {
 		},
 		{
 			type: 'Feature',
-			properties: units.ITAPUA,
+			properties: { slug: 'itapua' },
 			geometry: {
 				type: 'Polygon',
 				coordinates: [
@@ -16104,7 +16103,7 @@ export const geojson = {
 		},
 		{
 			type: 'Feature',
-			properties: units.ITAPUA,
+			properties: { slug: 'itapua' },
 			geometry: {
 				type: 'Polygon',
 				coordinates: [
@@ -16184,7 +16183,7 @@ export const geojson = {
 		},
 		{
 			type: 'Feature',
-			properties: units.TAINHAS,
+			properties: { slug: 'tainhas' },
 			geometry: {
 				type: 'Polygon',
 				coordinates: [
@@ -17066,7 +17065,7 @@ export const geojson = {
 		},
 		{
 			type: 'Feature',
-			properties: units.QUARTA_COLONIA,
+			properties: { slug: 'quarta-colonia' },
 			geometry: {
 				type: 'Polygon',
 				coordinates: [
@@ -19450,7 +19449,7 @@ export const geojson = {
 		},
 		{
 			type: 'Feature',
-			properties: units.PODOCARPUS,
+			properties: { slug: 'podocarpus' },
 			geometry: {
 				type: 'Polygon',
 				coordinates: [
@@ -19562,7 +19561,7 @@ export const geojson = {
 		},
 		{
 			type: 'Feature',
-			properties: units.PODOCARPUS,
+			properties: { slug: 'podocarpus' },
 			geometry: {
 				type: 'Polygon',
 				coordinates: [
@@ -19814,7 +19813,7 @@ export const geojson = {
 		},
 		{
 			type: 'Feature',
-			properties: units.BANHADO_DOS_PACHECOS,
+			properties: { slug: 'banhado-dos-pachecos' },
 			geometry: {
 				type: 'MultiPolygon',
 				coordinates: [
@@ -20180,7 +20179,7 @@ export const geojson = {
 		},
 		{
 			type: 'Feature',
-			properties: units.PE_DELTA_DO_JACUI,
+			properties: { slug: 'pe-delta-do-jacui' },
 			geometry: {
 				type: 'MultiPolygon',
 				coordinates: [
@@ -22385,7 +22384,7 @@ export const geojson = {
 		},
 		{
 			type: 'Feature',
-			properties: units.PE_DELTA_DO_JACUI,
+			properties: { slug: 'pe-delta-do-jacui' },
 			geometry: {
 				type: 'MultiPolygon',
 				coordinates: [
@@ -25276,7 +25275,7 @@ export const geojson = {
 		},
 		{
 			type: 'Feature',
-			properties: units.PE_DELTA_DO_JACUI,
+			properties: { slug: 'pe-delta-do-jacui' },
 			geometry: {
 				type: 'MultiPolygon',
 				coordinates: [
@@ -25906,7 +25905,7 @@ export const geojson = {
 		},
 		{
 			type: 'Feature',
-			properties: units.PE_DELTA_DO_JACUI,
+			properties: { slug: 'pe-delta-do-jacui' },
 			geometry: {
 				type: 'MultiPolygon',
 				coordinates: [
@@ -27064,7 +27063,7 @@ export const geojson = {
 		},
 		{
 			type: 'Feature',
-			properties: units.PE_DELTA_DO_JACUI,
+			properties: { slug: 'pe-delta-do-jacui' },
 			geometry: {
 				type: 'MultiPolygon',
 				coordinates: [
@@ -27662,7 +27661,7 @@ export const geojson = {
 		},
 		{
 			type: 'Feature',
-			properties: units.PE_DELTA_DO_JACUI,
+			properties: { slug: 'pe-delta-do-jacui' },
 			geometry: {
 				type: 'MultiPolygon',
 				coordinates: [
@@ -28134,7 +28133,7 @@ export const geojson = {
 		},
 		{
 			type: 'Feature',
-			properties: units.PE_DELTA_DO_JACUI,
+			properties: { slug: 'pe-delta-do-jacui' },
 			geometry: {
 				type: 'MultiPolygon',
 				coordinates: [
@@ -29551,7 +29550,7 @@ export const geojson = {
 		},
 		{
 			type: 'Feature',
-			properties: units.PE_DELTA_DO_JACUI,
+			properties: { slug: 'pe-delta-do-jacui' },
 			geometry: {
 				type: 'MultiPolygon',
 				coordinates: [
@@ -29836,7 +29835,7 @@ export const geojson = {
 		},
 		{
 			type: 'Feature',
-			properties: units.PE_DELTA_DO_JACUI,
+			properties: { slug: 'pe-delta-do-jacui' },
 			geometry: {
 				type: 'MultiPolygon',
 				coordinates: [
@@ -29959,7 +29958,7 @@ export const geojson = {
 		},
 		{
 			type: 'Feature',
-			properties: units.PE_DELTA_DO_JACUI,
+			properties: { slug: 'pe-delta-do-jacui' },
 			geometry: {
 				type: 'MultiPolygon',
 				coordinates: [
@@ -30552,7 +30551,7 @@ export const geojson = {
 		},
 		{
 			type: 'Feature',
-			properties: units.PE_DELTA_DO_JACUI,
+			properties: { slug: 'pe-delta-do-jacui' },
 			geometry: {
 				type: 'MultiPolygon',
 				coordinates: [
@@ -32861,7 +32860,7 @@ export const geojson = {
 		},
 		{
 			type: 'Feature',
-			properties: units.PE_DELTA_DO_JACUI,
+			properties: { slug: 'pe-delta-do-jacui' },
 			geometry: {
 				type: 'MultiPolygon',
 				coordinates: [
@@ -32964,7 +32963,7 @@ export const geojson = {
 		},
 		{
 			type: 'Feature',
-			properties: units.PE_DELTA_DO_JACUI,
+			properties: { slug: 'pe-delta-do-jacui' },
 			geometry: {
 				type: 'MultiPolygon',
 				coordinates: [
@@ -36343,7 +36342,7 @@ export const geojson = {
 		},
 		{
 			type: 'Feature',
-			properties: units.PE_DELTA_DO_JACUI,
+			properties: { slug: 'pe-delta-do-jacui' },
 			geometry: {
 				type: 'MultiPolygon',
 				coordinates: [
@@ -36985,7 +36984,7 @@ export const geojson = {
 		},
 		{
 			type: 'Feature',
-			properties: units.SAO_DONATO,
+			properties: { slug: 'sao-donato' },
 			geometry: {
 				type: 'MultiPolygon',
 				coordinates: [
@@ -37587,7 +37586,7 @@ export const geojson = {
 		},
 		{
 			type: 'Feature',
-			properties: units.LAGOA_VERDE,
+			properties: { slug: 'lagoa-verde' },
 			geometry: {
 				type: 'Polygon',
 				coordinates: [
@@ -38892,7 +38891,7 @@ export const geojson = {
 		},
 		{
 			type: 'Feature',
-			properties: units.CORREDORES_DE_BIODIVERSIDADE_DE_CANELA,
+			properties: { slug: 'corredores-de-biodiversidade-de-canela' },
 			geometry: {
 				type: 'Polygon',
 				coordinates: [
@@ -42770,7 +42769,7 @@ export const geojson = {
 		},
 		{
 			type: 'Feature',
-			properties: units.LAGOA_ITAPEVA,
+			properties: { slug: 'lagoa-itapeva' },
 			geometry: {
 				type: 'Polygon',
 				coordinates: [
@@ -42811,7 +42810,7 @@ export const geojson = {
 		},
 		{
 			type: 'Feature',
-			properties: units.ARACURI_ESMERALDA,
+			properties: { slug: 'aracuri-esmeralda' },
 			geometry: {
 				type: 'Polygon',
 				coordinates: [
@@ -42935,7 +42934,7 @@ export const geojson = {
 		},
 		{
 			type: 'Feature',
-			properties: units.MORRO_DE_OSORIO,
+			properties: { slug: 'morro-de-osorio' },
 			geometry: {
 				type: 'Polygon',
 				coordinates: [
@@ -43298,7 +43297,7 @@ export const geojson = {
 		},
 		{
 			type: 'Feature',
-			properties: units.TAIM,
+			properties: { slug: 'taim' },
 			geometry: {
 				type: 'MultiPolygon',
 				coordinates: [
@@ -43719,7 +43718,7 @@ export const geojson = {
 		},
 		{
 			type: 'Feature',
-			properties: units.MORRO_FERRABRAZ,
+			properties: { slug: 'morro-ferrabraz' },
 			geometry: {
 				type: 'Polygon',
 				coordinates: [
@@ -43741,7 +43740,7 @@ export const geojson = {
 		},
 		{
 			type: 'Feature',
-			properties: units.MORRO_FERRABRAZ,
+			properties: { slug: 'morro-ferrabraz' },
 			geometry: {
 				type: 'Polygon',
 				coordinates: [
@@ -43762,7 +43761,7 @@ export const geojson = {
 		},
 		{
 			type: 'Feature',
-			properties: units.CANELA,
+			properties: { slug: 'canela' },
 			geometry: {
 				type: 'Polygon',
 				coordinates: [
@@ -43919,7 +43918,7 @@ export const geojson = {
 		},
 		{
 			type: 'Feature',
-			properties: units.PASSO_FUNDO,
+			properties: { slug: 'passo-fundo' },
 			geometry: {
 				type: 'Polygon',
 				coordinates: [
@@ -44271,7 +44270,7 @@ export const geojson = {
 		},
 		{
 			type: 'Feature',
-			properties: units.SAO_FRANCISCO_DE_PAULA,
+			properties: { slug: 'sao-francisco-de-paula' },
 			geometry: {
 				type: 'Polygon',
 				coordinates: [
@@ -44343,7 +44342,7 @@ export const geojson = {
 		},
 		{
 			type: 'Feature',
-			properties: units.CAPAO_DA_AMIZADE,
+			properties: { slug: 'capao-da-amizade' },
 			geometry: {
 				type: 'Polygon',
 				coordinates: [
@@ -44358,7 +44357,7 @@ export const geojson = {
 		},
 		{
 			type: 'Feature',
-			properties: units.SANGA_DA_ALEMOA,
+			properties: { slug: 'sanga-da-alemoa' },
 			geometry: {
 				type: 'Polygon',
 				coordinates: [
@@ -44407,7 +44406,7 @@ export const geojson = {
 		},
 		{
 			type: 'Feature',
-			properties: units.LAGOA_DO_PEIXE,
+			properties: { slug: 'lagoa-do-peixe' },
 			geometry: {
 				type: 'Polygon',
 				coordinates: [
@@ -44463,7 +44462,7 @@ export const geojson = {
 		},
 		{
 			type: 'Feature',
-			properties: units.PN_SERRA_GERAL,
+			properties: { slug: 'pn-serra-geral' },
 			geometry: {
 				type: 'MultiPolygon',
 				coordinates: [
@@ -45277,7 +45276,7 @@ export const geojson = {
 		},
 		{
 			type: 'Feature',
-			properties: units.APARADOS_DA_SERRA,
+			properties: { slug: 'aparados-da-serra' },
 			geometry: {
 				type: 'Polygon',
 				coordinates: [
@@ -46267,7 +46266,7 @@ export const geojson = {
 		},
 		{
 			type: 'Feature',
-			properties: units.BANHADO_DA_IMPERATRIZ,
+			properties: { slug: 'banhado-da-imperatriz' },
 			geometry: {
 				type: 'Polygon',
 				coordinates: [
@@ -46299,7 +46298,7 @@ export const geojson = {
 		},
 		{
 			type: 'Feature',
-			properties: units.CASCATA_DO_SALSO,
+			properties: { slug: 'cascata-do-salso' },
 			geometry: {
 				type: 'Polygon',
 				coordinates: [
@@ -46456,7 +46455,7 @@ export const geojson = {
 		},
 		{
 			type: 'Feature',
-			properties: units.RONDA,
+			properties: { slug: 'ronda' },
 			geometry: {
 				type: 'Polygon',
 				coordinates: [
@@ -47104,7 +47103,7 @@ export const geojson = {
 		},
 		{
 			type: 'Feature',
-			properties: units.SERTAO,
+			properties: { slug: 'sertao' },
 			geometry: {
 				type: 'MultiPolygon',
 				coordinates: [
@@ -50563,7 +50562,7 @@ export const geojson = {
 		},
 		{
 			type: 'Feature',
-			properties: units.APERTADO,
+			properties: { slug: 'apertado' },
 			geometry: {
 				type: 'Polygon',
 				coordinates: [
@@ -50636,7 +50635,7 @@ export const geojson = {
 		},
 		{
 			type: 'Feature',
-			properties: units.PAMPA,
+			properties: { slug: 'pampa' },
 			geometry: {
 				type: 'Polygon',
 				coordinates: [
@@ -50651,7 +50650,7 @@ export const geojson = {
 		},
 		{
 			type: 'Feature',
-			properties: units.MORROS,
+			properties: { slug: 'morros' },
 			geometry: {
 				type: 'Polygon',
 				coordinates: [
@@ -50814,7 +50813,7 @@ export const geojson = {
 		},
 		{
 			type: 'Feature',
-			properties: units.PINHEIROS,
+			properties: { slug: 'pinheiros' },
 			geometry: {
 				type: 'Polygon',
 				coordinates: [
@@ -50858,7 +50857,7 @@ export const geojson = {
 		},
 		{
 			type: 'Feature',
-			properties: units.LOGEMANN,
+			properties: { slug: 'logemann' },
 			geometry: {
 				type: 'Polygon',
 				coordinates: [
@@ -50910,7 +50909,7 @@ export const geojson = {
 		},
 		{
 			type: 'Feature',
-			properties: units.MANUEL_DE_BARROS_PEREIRA,
+			properties: { slug: 'manuel-de-barros-pereira' },
 			geometry: {
 				type: 'Polygon',
 				coordinates: [
@@ -50937,7 +50936,7 @@ export const geojson = {
 		},
 		{
 			type: 'Feature',
-			properties: units.MORRO_JOSE_LUTZENBERGER,
+			properties: { slug: 'morro-jose-lutzenberger' },
 			geometry: {
 				type: 'Polygon',
 				coordinates: [
@@ -50980,7 +50979,7 @@ export const geojson = {
 		},
 		{
 			type: 'Feature',
-			properties: units.SAINT_HILAIRE,
+			properties: { slug: 'saint-hilaire' },
 			geometry: {
 				type: 'Polygon',
 				coordinates: [
@@ -52083,7 +52082,7 @@ export const geojson = {
 		},
 		{
 			type: 'Feature',
-			properties: units.ILHA_DOS_LOBOS,
+			properties: { slug: 'ilha-dos-lobos' },
 			geometry: {
 				type: 'Polygon',
 				coordinates: [
@@ -52099,7 +52098,7 @@ export const geojson = {
 		},
 		{
 			type: 'Feature',
-			properties: units.MOLHE_LESTE,
+			properties: { slug: 'molhe-leste' },
 			geometry: {
 				type: 'Polygon',
 				coordinates: [
@@ -52115,7 +52114,7 @@ export const geojson = {
 		},
 		{
 			type: 'Feature',
-			properties: units.BIOPAMPA,
+			properties: { slug: 'biopampa' },
 			geometry: {
 				type: 'Polygon',
 				coordinates: [
@@ -52130,7 +52129,7 @@ export const geojson = {
 		},
 		{
 			type: 'Feature',
-			properties: units.DARWIN_JOAO_GEREMIA,
+			properties: { slug: 'darwin-joao-geremia' },
 			geometry: {
 				type: 'Polygon',
 				coordinates: [
@@ -52145,7 +52144,7 @@ export const geojson = {
 		},
 		{
 			type: 'Feature',
-			properties: units.LAMI_JOSE_LUTZENBERGER,
+			properties: { slug: 'lami-jose-lutzenberger' },
 			geometry: {
 				type: 'MultiPolygon',
 				coordinates: [
@@ -52380,7 +52379,7 @@ export const geojson = {
 		},
 		{
 			type: 'Feature',
-			properties: units.BOSQUE_DE_CANELA,
+			properties: { slug: 'bosque-de-canela' },
 			geometry: {
 				type: 'Polygon',
 				coordinates: [
@@ -52407,7 +52406,7 @@ export const geojson = {
 		},
 		{
 			type: 'Feature',
-			properties: units.CHACARA_SANANDUVA,
+			properties: { slug: 'chacara-sananduva' },
 			geometry: {
 				type: 'Polygon',
 				coordinates: [
@@ -52451,7 +52450,7 @@ export const geojson = {
 		},
 		{
 			type: 'Feature',
-			properties: units.COSTA_DO_SERRO,
+			properties: { slug: 'costa-do-serro' },
 			geometry: {
 				type: 'Polygon',
 				coordinates: [
@@ -52495,7 +52494,7 @@ export const geojson = {
 		},
 		{
 			type: 'Feature',
-			properties: units.UNISC,
+			properties: { slug: 'unisc' },
 			geometry: {
 				type: 'Polygon',
 				coordinates: [
@@ -52546,7 +52545,7 @@ export const geojson = {
 		},
 		{
 			type: 'Feature',
-			properties: units.ESTANCIA_SANTA_IZABEL_DO_BITUI,
+			properties: { slug: 'estancia-santa-izabel-do-bitui' },
 			geometry: {
 				type: 'Polygon',
 				coordinates: [
@@ -52590,7 +52589,7 @@ export const geojson = {
 		},
 		{
 			type: 'Feature',
-			properties: units.ESTANCIA_SANTA_RITA,
+			properties: { slug: 'estancia-santa-rita' },
 			geometry: {
 				type: 'Polygon',
 				coordinates: [
@@ -52634,7 +52633,7 @@ export const geojson = {
 		},
 		{
 			type: 'Feature',
-			properties: units.FARROUPILHA,
+			properties: { slug: 'farroupilha' },
 			geometry: {
 				type: 'MultiPolygon',
 				coordinates: [
@@ -52762,7 +52761,7 @@ export const geojson = {
 		},
 		{
 			type: 'Feature',
-			properties: units.FAZENDA_BRANQUILHO,
+			properties: { slug: 'fazenda-branquilho' },
 			geometry: {
 				type: 'Polygon',
 				coordinates: [
@@ -52806,7 +52805,7 @@ export const geojson = {
 		},
 		{
 			type: 'Feature',
-			properties: units.FAZENDA_CANELEIRA,
+			properties: { slug: 'fazenda-caneleira' },
 			geometry: {
 				type: 'Polygon',
 				coordinates: [
@@ -52850,7 +52849,7 @@ export const geojson = {
 		},
 		{
 			type: 'Feature',
-			properties: units.FAZENDA_CURUPIRA,
+			properties: { slug: 'fazenda-curupira' },
 			geometry: {
 				type: 'Polygon',
 				coordinates: [
@@ -52894,7 +52893,7 @@ export const geojson = {
 		},
 		{
 			type: 'Feature',
-			properties: units.FAZENDA_DAS_PALMAS,
+			properties: { slug: 'fazenda-das-palmas' },
 			geometry: {
 				type: 'Polygon',
 				coordinates: [
@@ -52938,7 +52937,7 @@ export const geojson = {
 		},
 		{
 			type: 'Feature',
-			properties: units.FAZENDA_ESPORA_DE_OURO,
+			properties: { slug: 'fazenda-espora-de-ouro' },
 			geometry: {
 				type: 'Polygon',
 				coordinates: [
@@ -52982,7 +52981,7 @@ export const geojson = {
 		},
 		{
 			type: 'Feature',
-			properties: units.FAZENDA_MORRO_DE_SAPUCAIA,
+			properties: { slug: 'fazenda-morro-de-sapucaia' },
 			geometry: {
 				type: 'Polygon',
 				coordinates: [
@@ -53026,7 +53025,7 @@ export const geojson = {
 		},
 		{
 			type: 'Feature',
-			properties: units.GRANJA_SAO_ROQUE,
+			properties: { slug: 'granja-sao-roque' },
 			geometry: {
 				type: 'Polygon',
 				coordinates: [
@@ -53070,7 +53069,7 @@ export const geojson = {
 		},
 		{
 			type: 'Feature',
-			properties: units.JARDIM_DA_PAZ,
+			properties: { slug: 'jardim-da-paz' },
 			geometry: {
 				type: 'Polygon',
 				coordinates: [
@@ -53114,7 +53113,7 @@ export const geojson = {
 		},
 		{
 			type: 'Feature',
-			properties: units.MARIANA_PIMENTEL,
+			properties: { slug: 'mariana-pimentel' },
 			geometry: {
 				type: 'Polygon',
 				coordinates: [
@@ -53158,7 +53157,7 @@ export const geojson = {
 		},
 		{
 			type: 'Feature',
-			properties: units.MATA_DO_PROFESSOR_BAPTISTA,
+			properties: { slug: 'mata-do-professor-baptista' },
 			geometry: {
 				type: 'Polygon',
 				coordinates: [
@@ -53179,7 +53178,7 @@ export const geojson = {
 		},
 		{
 			type: 'Feature',
-			properties: units.MINAS_DO_PAREDAO,
+			properties: { slug: 'minas-do-paredao' },
 			geometry: {
 				type: 'Polygon',
 				coordinates: [
@@ -53223,7 +53222,7 @@ export const geojson = {
 		},
 		{
 			type: 'Feature',
-			properties: units.O_BOSQUE,
+			properties: { slug: 'o-bosque' },
 			geometry: {
 				type: 'Polygon',
 				coordinates: [
@@ -53336,7 +53335,7 @@ export const geojson = {
 		},
 		{
 			type: 'Feature',
-			properties: units.PONTAL_DA_BARRA,
+			properties: { slug: 'pontal-da-barra' },
 			geometry: {
 				type: 'Polygon',
 				coordinates: [
@@ -53380,7 +53379,7 @@ export const geojson = {
 		},
 		{
 			type: 'Feature',
-			properties: units.POSSE_DOS_FRANCIOSI,
+			properties: { slug: 'posse-dos-franciosi' },
 			geometry: {
 				type: 'MultiPolygon',
 				coordinates: [
@@ -53471,7 +53470,7 @@ export const geojson = {
 		},
 		{
 			type: 'Feature',
-			properties: units.PRO_MATA,
+			properties: { slug: 'pro-mata' },
 			geometry: {
 				type: 'Polygon',
 				coordinates: [
@@ -53756,7 +53755,7 @@ export const geojson = {
 		},
 		{
 			type: 'Feature',
-			properties: units.RANCHO_MIRA_SERRA,
+			properties: { slug: 'rancho-mira-serra' },
 			geometry: {
 				type: 'Polygon',
 				coordinates: [
@@ -53800,7 +53799,7 @@ export const geojson = {
 		},
 		{
 			type: 'Feature',
-			properties: units.RECANTO_DO_ROBALO,
+			properties: { slug: 'recanto-do-robalo' },
 			geometry: {
 				type: 'Polygon',
 				coordinates: [
@@ -53844,7 +53843,7 @@ export const geojson = {
 		},
 		{
 			type: 'Feature',
-			properties: units.RESERVA_DO_CAPAO_GRANDE,
+			properties: { slug: 'reserva-do-capao-grande' },
 			geometry: {
 				type: 'Polygon',
 				coordinates: [
@@ -53888,7 +53887,7 @@ export const geojson = {
 		},
 		{
 			type: 'Feature',
-			properties: units.RESERVA_DOS_MANANCIAIS,
+			properties: { slug: 'reserva-dos-mananciais' },
 			geometry: {
 				type: 'Polygon',
 				coordinates: [
@@ -53932,7 +53931,7 @@ export const geojson = {
 		},
 		{
 			type: 'Feature',
-			properties: units.RESERVA_DO_MARAGATO,
+			properties: { slug: 'reserva-do-maragato' },
 			geometry: {
 				type: 'Polygon',
 				coordinates: [
@@ -54113,7 +54112,9 @@ export const geojson = {
 		},
 		{
 			type: 'Feature',
-			properties: units.RESERVA_PARTICULAR_PROFESSOR_DELMAR_HARRY_DOS_REIS,
+			properties: {
+				slug: 'reserva-particular-professor-delmar-harry-dos-reis',
+			},
 			geometry: {
 				type: 'Polygon',
 				coordinates: [
@@ -54157,7 +54158,7 @@ export const geojson = {
 		},
 		{
 			type: 'Feature',
-			properties: units.RINCAO_DAS_FLORES,
+			properties: { slug: 'rincao-das-flores' },
 			geometry: {
 				type: 'Polygon',
 				coordinates: [
@@ -54173,7 +54174,7 @@ export const geojson = {
 		},
 		{
 			type: 'Feature',
-			properties: units.RONCO_DO_BUGIO,
+			properties: { slug: 'ronco-do-bugio' },
 			geometry: {
 				type: 'Polygon',
 				coordinates: [
@@ -54276,7 +54277,7 @@ export const geojson = {
 		},
 		{
 			type: 'Feature',
-			properties: units.SANTA_BARBARA,
+			properties: { slug: 'santa-barbara' },
 			geometry: {
 				type: 'MultiPolygon',
 				coordinates: [
@@ -54361,7 +54362,7 @@ export const geojson = {
 		},
 		{
 			type: 'Feature',
-			properties: units.SITIO_PORTO_DA_CAPELA,
+			properties: { slug: 'sitio-porto-da-capela' },
 			geometry: {
 				type: 'Polygon',
 				coordinates: [
@@ -54405,7 +54406,7 @@ export const geojson = {
 		},
 		{
 			type: 'Feature',
-			properties: units.SOLAR_DAS_BORBOLETAS,
+			properties: { slug: 'solar-das-borboletas' },
 			geometry: {
 				type: 'Polygon',
 				coordinates: [
@@ -54422,7 +54423,7 @@ export const geojson = {
 		},
 		{
 			type: 'Feature',
-			properties: units.UNIVERSIDADE_DE_PASSO_FUNDO,
+			properties: { slug: 'universidade-de-passo-fundo' },
 			geometry: {
 				type: 'Polygon',
 				coordinates: [
@@ -54674,7 +54675,7 @@ export const geojson = {
 		},
 		{
 			type: 'Feature',
-			properties: units.BOA_VISTA,
+			properties: { slug: 'boa-vista' },
 			geometry: {
 				type: 'Polygon',
 				coordinates: [
@@ -56221,7 +56222,7 @@ export const geojson = {
 		},
 		{
 			type: 'Feature',
-			properties: units.ESTADUAL_BARBA,
+			properties: { slug: 'estadual-barba' },
 			geometry: {
 				type: 'Polygon',
 				coordinates: [
@@ -57433,7 +57434,7 @@ export const geojson = {
 		},
 		{
 			type: 'Feature',
-			properties: units.ESTADUAL_MOA,
+			properties: { slug: 'estadual-moa' },
 			geometry: {
 				type: 'Polygon',
 				coordinates: [
@@ -57499,7 +57500,7 @@ export const geojson = {
 		},
 		{
 			type: 'Feature',
-			properties: units.ESTADUAL_PASSO_DO_BURACO,
+			properties: { slug: 'estadual-passo-do-buraco' },
 			geometry: {
 				type: 'Polygon',
 				coordinates: [
@@ -57523,7 +57524,7 @@ export const geojson = {
 		},
 		{
 			type: 'Feature',
-			properties: units.ESTADUAL_SALTO_FORQUETA,
+			properties: { slug: 'estadual-salto-forqueta' },
 			geometry: {
 				type: 'Polygon',
 				coordinates: [
