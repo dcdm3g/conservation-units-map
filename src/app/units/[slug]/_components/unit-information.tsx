@@ -12,10 +12,8 @@ export function UnitInformation({ info }: UnitInformationProps) {
 	return (
 		<ScrollArea className="h-full">
 			<div className="flex flex-col gap-4">
-				<MapPin className="text-primary size-6" />
-
 				<div className="flex gap-2 items-start">
-					<h1 className=" text-2xl font-semibold text-foreground">
+					<h1 className="text-2xl font-semibold text-foreground">
 						{info.name}
 					</h1>
 				</div>

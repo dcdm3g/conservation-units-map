@@ -1,5 +1,6 @@
 'use client'
 
+import { BarSearch } from '@/components/bar-search'
 import { cn } from '@/lib/utils'
 import { useGSAP } from '@gsap/react'
 import { gsap } from 'gsap'
@@ -51,7 +52,9 @@ export function ContentBar({ children }: ContentBarProps) {
 					/>
 				</button>
 
-				<div id="content" className="size-full">
+				<div id="content" className="size-full relative pt-14">
+					<BarSearch />
+
 					{children}
 				</div>
 			</aside>

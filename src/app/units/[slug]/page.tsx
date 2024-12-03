@@ -1,4 +1,4 @@
-import { UnitDialog } from '@/app/units/[slug]/_components/unit-dialog'
+import { UnitDrawer } from '@/app/units/[slug]/_components/unit-drawer'
 import { UnitInformation } from '@/app/units/[slug]/_components/unit-information'
 import { units } from '@/constants/units'
 import { Fragment } from 'react'
@@ -20,7 +20,7 @@ export default async function Unit({ params }: UnitProps) {
 	return (
 		<Fragment>
 			<UnitInformation info={info!} />
-			<UnitDialog info={info!} />
+			<UnitDrawer info={info!} />
 		</Fragment>
 	)
 }

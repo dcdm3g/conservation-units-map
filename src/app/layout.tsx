@@ -1,6 +1,5 @@
 import { ContentBar } from '@/components/content-bar'
 import { FloatingUnitsSearch } from '@/components/floating-units-search'
-import { MainSidebar } from '@/components/main-sidebar'
 import { StylesDock } from '@/components/themes-dock'
 import { UnitsMap } from '@/components/units-map'
 import { cn } from '@/lib/utils'
@@ -27,7 +26,6 @@ export default function RootLayout({
 	return (
 		<html className="dark" lang="pt-BR">
 			<body className={cn(inter.className, 'min-h-screen flex')}>
-				<MainSidebar />
 				<StylesDock />
 
 				<div className="flex-1 relative flex">
