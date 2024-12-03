@@ -29,7 +29,7 @@ export function UnitDrawer({ children }: UnitDialogProps) {
 				}
 			}}
 		>
-			<DrawerContent className="p-4">
+			<DrawerContent className="p-4" aria-describedby={undefined}>
 				<DrawerTitle className="sr-only">{unit}</DrawerTitle>
 
 				<ScrollArea className="h-full">

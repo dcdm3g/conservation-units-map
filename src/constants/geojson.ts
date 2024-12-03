@@ -1647,7 +1647,7 @@ export const geojson = {
 		},
 		{
 			type: 'Feature',
-			properties: { slug: 'apa-delta-do-jacui' },
+			properties: { slug: 'apa-estadual-delta-do-jacui' },
 			geometry: {
 				type: 'Polygon',
 				coordinates: [
