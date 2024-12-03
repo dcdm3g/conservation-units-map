@@ -5,6 +5,8 @@ export const units: Unit[] = [
 		slug: 'banhado-grande',
 		name: 'Área de Proteção Ambiental do Banhado Grande',
 		category: 'Unidade de Uso Sustentável',
+		lat: -29.96903586687877,
+		lng: -50.789575245618266,
 		summary:
 			'A Área de Proteção Ambiental do Banhado Grande cobre parte dos Biomas Pampa e Mata Atlântica, ocupando 2/3 da bacia do rio Gravataí. A vegetação original é formada por banhados e matas de restinga em solos arenosos da Coxilha das Lombas. Atualmente, a área abriga urbanizações e atividades agropastoris, com destaque para o cultivo de arroz. Criada para proteger os banhados que alimentam o rio Gravataí, a APA busca equilibrar o desenvolvimento socioeconômico com a conservação dos ecossistemas e a recuperação de áreas degradadas. O Plano de Manejo de 2021 foca na conservação da qualidade da água e espécies como o Cervo-do-pantanal e o Tuco-tuco.',
 	},
