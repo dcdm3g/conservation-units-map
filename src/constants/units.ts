@@ -317,6 +317,8 @@ export const units: Unit[] = [
 		category: 'Unidade de Proteção Integral',
 		summary:
 			'O Parque Nacional de Aparados da Serra está localizado na Serra Geral, na divisa entre os estados do Rio Grande do Sul e Santa Catarina, no sul do Brasil, com coordenadas que vão de 29º07’ a 29º15’ S e 50º01’ a 50º10’ W. Estabelecido em 1959, é um dos primeiros parques nacionais do país e foi criado para proteger o canyon Itaimbezinho. O parque ocupa uma área de 10.250 hectares.',
+		lng: -50.14344600165089,
+		lat: -29.187854372057487,
 	},
 	{
 		slug: 'banhado-da-imperatriz',
