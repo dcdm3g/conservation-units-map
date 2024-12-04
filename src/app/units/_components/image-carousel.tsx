@@ -19,15 +19,23 @@ export function ImageCarousel() {
 		<Carousel className="w-full">
 			<CarouselContent>
 				<CarouselItem className="relative h-40">
-					<Image src={'/' + unit + '-left.jpg'} alt={unit} fill />
+					<Image src={'/' + unit + '-1.jpg'} alt={unit} fill />
 				</CarouselItem>
 
 				<CarouselItem className="relative h-40">
-					<Image src={'/' + unit + '-middle.jpg'} alt={unit} fill />
+					<Image src={'/' + unit + '-2.jpg'} alt={unit} fill />
 				</CarouselItem>
 
 				<CarouselItem className="relative h-40">
-					<Image src={'/' + unit + '-right.jpg'} alt={unit} fill />
+					<Image src={'/' + unit + '-3.jpg'} alt={unit} fill />
+				</CarouselItem>
+
+				<CarouselItem className="relative h-40">
+					<Image src={'/' + unit + '-4.jpg'} alt={unit} fill />
+				</CarouselItem>
+
+				<CarouselItem className="relative h-40">
+					<Image src={'/' + unit + '-5.jpg'} alt={unit} fill />
 				</CarouselItem>
 			</CarouselContent>
 
